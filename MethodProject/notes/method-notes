@@ -1,0 +1,40 @@
+standalone application - are applications which have the main method
+JRE - Java Runtime Environment
+JRE - JVM(Java Virtual Machine) + default handler + garbage collector + class loade + byte code verifier
+JDK - Java Development Kit
+
+3 building block of any program
+-------------------------------
+input
+process - logic, bussiness logic
+output
+
+
+2 steps to work with methods
+-----------------------------
+1) define a method
+2) call/invoke the method
+
+access specifiers
+-----------------
+public 
+private
+protected
+default
+
+access modifiers
+-----------------
+static
+final
+transient
+native
+synchronized
+....
+
+
+only a static method can call another static method
+in other words i can say a static method cannot call a non static method
+and that's the reason we are placing static in front of the methods that we created in the demo
+however static has a different purpose and it will be discussed in the upcoming sessions
+
+
