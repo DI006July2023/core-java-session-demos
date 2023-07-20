@@ -1,0 +1,12 @@
+
+
+any variable declared in a method(local variable) takes up memeory in stack
+any memory created using new takes up space in heap
+
+a variable in stack if not initilized will hold garbage values
+a variable in heap if not initialized will hold default values
+		int, byte, short, long - 0
+		float , double - 0.0
+		boolean - false
+		char - '\0'
+		objects - null

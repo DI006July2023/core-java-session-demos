@@ -13,7 +13,7 @@ public class MethodDemo {
 //		}
 		int output = computeBasePower(base, power);
 				
-		// output
+		// output 
 		System.out.println("The answer is:" + output);
 
 	}
