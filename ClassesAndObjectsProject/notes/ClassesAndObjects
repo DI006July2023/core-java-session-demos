@@ -1,0 +1,49 @@
+Things that we saw before entering into Object Oriented programming
+----------------------------------------------------------------------------
+hello world program
+primitive data types - 8 data types
+operators
+flow constructs
+	- if
+	- switch case
+loops
+	- do...while
+	- while loop
+	- for loop
+arrays
+String
+methods
+
+In Object Oriented Programing
+----------------------------
+class contains
+--------------
+variables
+	- attributes/data members/state/properties
+methods
+	- functions/members/behaviour 
+
+example:
+--------
+class Person{
+	int name;
+	int height;
+	String gender;
+	
+	boolean talk(){....}
+	boolean listen(){...}
+	boolean write(){.....}
+}
+
+
+a class can also have 
+----------------------
+static blocks
+inner class
+
+getters/setters
+constructors
+toString
+equals
+hashcode
+
