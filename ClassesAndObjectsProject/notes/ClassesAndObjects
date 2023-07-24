@@ -47,3 +47,30 @@ toString
 equals
 hashcode
 
+The room naration
+-----------------
+Dimensions
+Room
+
+computePaintingCostOfWalls
+computeFloorArea
+
+what is a constructor?
+----------------------
+- a special method
+	- has the same name as the class
+	- it is called automatically whenever an object is created, 
+			you cannot call a constructor explicitly like how you call other methods 
+	- does not return anything, not even void
+	
+when you create a class and do not provide a constructor, 
+	- the compiler will automatically provide a constructor
+	- and this is called default constructor
+	- the moment you provide a constructor in your class the default constructor is lost
+
+we can overload constructors - multiple constructors in a class with different parameters
+we can call one constructor from another constructor using this() and this is called constructor chaining
+
+
+
+
