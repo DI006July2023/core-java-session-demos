@@ -71,6 +71,42 @@ when you create a class and do not provide a constructor,
 we can overload constructors - multiple constructors in a class with different parameters
 we can call one constructor from another constructor using this() and this is called constructor chaining
 
+Polymorphism
+------------
 
+- method overloading
+	- same method name but different arguments
+	- different arguments mean 
+		- no of arguments 
+		- type of arguments
+		- order of arguments
+	- we do not consider the return type in method overloading
+	
+class Shape{
+
+	int area(int side){
+		return (side * side);
+	}
+	
+	void area(int length, int breadth){
+		int area = length * breadth;
+	}
+}
+
+
+int a = 10;
+System.out.println(a);
+
+String name = "John";
+System.out.println(name);
+
+
+- method overriding
+
+
+static polymorphism - compile time polymorphism
+	- method overloading
+dynamic polymophism - runtime polymorphism
+	- method overiding
 
 
