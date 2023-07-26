@@ -7,6 +7,7 @@ public class Room {
 	int roomNo;
 	
 	Room(int length, int width, int height){
+		super();// inserted by compiler automatically if you have not provided this() or super()
 		//this(length, width, height, "blue", 50);
 		this.length = length;
 		this.width = width;

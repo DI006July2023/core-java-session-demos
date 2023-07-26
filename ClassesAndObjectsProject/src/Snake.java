@@ -10,4 +10,11 @@ public class Snake extends Animal{
 		System.out.println("Snake attacks...");
 	}
 
+	@Override
+	void eat() {
+		System.out.println("Snake swallows");
+		
+	}
+
+	
 }

@@ -109,4 +109,60 @@ static polymorphism - compile time polymorphism
 dynamic polymophism - runtime polymorphism
 	- method overiding
 
+Encapsulation
+-------------
+- wrapping up the data members and methods into a single unit
+- hiding of the data
+- access specifiers : public, protected, default, private
+- private data members/class level variables with public getters and setters
+- the getter method/accessors  gives the read access to the variable
+- the setter method/mutators gives the write access to the variable
+
+Abstraction
+-----------
+- highlight the essential features/data
+- achieve abstraction through abstract classes and interfaces
+
+Abstract classes
+----------------
+- if a class has atleast one abstract method the class will become an abstract class
+- abstract methods are methods which are declared and have no method body
+- we cannot create objects for abstract classes
+- abstract classes are incomplete classes
+- abstract classes are meant to be inherited
+- so the child class is forced to override the abstract method , thereby making it complete
+- this child class will be called as concrete class
+- if a child class extends an abstract class we get the is-a relation
+
+Interfaces
+----------
+- pure abstract classes
+- meaning all methods in an interface is by default abstract and public and you dont have to specify abstract and public
+- all variables in an interface by default are public static final and you dont have to specify them
+- all this was only until java 8 version
+- from java 8 version, an interface can have
+	- abstract methods
+	- default methods (methods with method body)
+	- static methods
+- we CANNOT create objects of interfaces
+- interfaces are meant to be implemented by classes
+- and this class can be called as the implementation class
+- when a class implements an interface it DOES NOT give is-a relation 
+
+interface MyInterface{
+	int MIN_AGE = 18;
+	void myMethod();
+
+}
+
+
+class  ------> class
+
+
+
+
+
+
+
+
 

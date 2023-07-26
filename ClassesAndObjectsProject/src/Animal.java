@@ -1,5 +1,6 @@
 
-public class Animal {
+public abstract class Animal {
+	// defining a method
 	void breathes() {
 		System.out.println("Animal breathes...");
 	}
@@ -7,4 +8,6 @@ public class Animal {
 	void mobility() {
 		System.out.println("Animal is mobile...");
 	}
+	
+	abstract void eat(); // declaring a method - having the signature with no method body
 }

@@ -2,9 +2,10 @@
 public class AnimalMain {
 
 	public static void main(String[] args) {
-		Animal animal = new Animal();
-		animal.breathes();
-		animal.mobility();
+		// commented because Animal class has become an abstract class 
+//		Animal animal = new Animal();
+//		animal.breathes();
+//		animal.mobility();
 		
 		Dog dog = new Dog();
 		dog.breathes();
@@ -18,7 +19,10 @@ public class AnimalMain {
 		
 		Animal animal1 = new Dog();
 		animal1.breathes();
-		animal1.mobility();
+		animal1.mobility(); // at compile time the compiler assumes that the mobility of the 
+									//super class is going to be called
+							// but during runtime the mobility of the sub class is bound to animal1
+									// and mobility of Dog class is called
 		//animal1.makeSound();
 		
 		System.out.println("animal1 cast to dog1");
@@ -41,5 +45,7 @@ public class AnimalMain {
 		
 
 	}
+	
+	
 
 }

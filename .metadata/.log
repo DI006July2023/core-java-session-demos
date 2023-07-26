@@ -658,3 +658,53 @@ java.lang.IllegalStateException: Conflicting handlers: {[ActionHandler(org.eclip
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY de.yatta.platform.marketplace.licensing.client 2 0 2023-07-26 07:01:57.180
+!MESSAGE Could not receive a valid response for solution feature de.yatta.feature.roundtrip from the license server.
+!STACK 0
+org.apache.http.NoHttpResponseException: marketplace.yatta.de:443 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at de.yatta.eclipse.launcher.communication.utils.HttpRequestContext$RequestTemplateExecutor.doReceiveResponse(HttpRequestContext.java:707)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.apache.http.client.fluent.Request.internalExecute(Request.java:173)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:262)
+	at de.yatta.eclipse.launcher.communication.utils.RequestTemplate.execute(RequestTemplate.java:200)
+	at de.yatta.platform.marketplace.licensing.client.LicensingClient$1.run(LicensingClient.java:500)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY de.yatta.platform.marketplace.licensing.client 2 0 2023-07-26 07:01:57.185
+!MESSAGE Could not receive a valid response for solution feature de.yatta.feature.emf from the license server.
+!STACK 0
+org.apache.http.NoHttpResponseException: marketplace.yatta.de:443 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at de.yatta.eclipse.launcher.communication.utils.HttpRequestContext$RequestTemplateExecutor.doReceiveResponse(HttpRequestContext.java:707)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.apache.http.client.fluent.Request.internalExecute(Request.java:173)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:262)
+	at de.yatta.eclipse.launcher.communication.utils.RequestTemplate.execute(RequestTemplate.java:200)
+	at de.yatta.platform.marketplace.licensing.client.LicensingClient$1.run(LicensingClient.java:500)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
