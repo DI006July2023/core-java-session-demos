@@ -1,0 +1,67 @@
+input 
+	- for console based appln we will use Scanner ro get the input from the user
+	- for web appln we will get input through forms using html in the browser
+process
+	- this is logic/bussiness logic of your appln
+output
+	- for console based appln we will use System.out.println()
+	- for web appln we will display the output in the browser using html
+
+Book management System
+we are going to create a console based application
+we will perform the basic CRUD operation
+
+C - create
+R - read
+U - update
+D - delete
+
+layers/Tiers of the project
+---------------------------
+- 3 layered project
+	- presentation layer/view layer
+		- responsible for input and output
+		- in a console based appln the main method will be the presentation layer
+	- service layer
+		- write the logic here
+	- DAO(Data Access Object) layer
+		- responsible for interaction with the DB
+		- we havent learnt DB yet, so we will use a collection to represent the data store
+	
+model
+-----
+	- also called Data Transfer Objects(DTO), Transfer Objects(TO), Value Objects(VO), Plain Old Java Object(POJO)
+	- responsible to hold the data that would be transported to and fro between the layers
+	
+bookId
+bookTitle
+bookAuthor
+bookGenre
+bookCost
+bookImageUrl
+	
+MVC - Model View Controller
+--------------------------
+- currently I would not use this pattern
+- We will introduce when we start with web applications
+	
+User stories in my project
+--------------------------
+1) Add a book to the DB(a collection)
+2) Fetch all the books from the DB( a collection)
+3) Fetch a book from the DB(a collection)
+4) Fetch books based on genre
+5) Update an existing book in the DB( a collection)
+6) Remove a book from the DB (a collection)
+7) Write all the book information into a file
+8) Exit the appln
+
+- these 8 user stories are placed in the product backlog
+- when the 1st sprint starts, the team decides on what goes in for the 1st sprint
+	- if 1, 5, 6 goes for the 1st sprint, it is moved to the sprint backlog
+- a sprint demo takes place at the end of the sprint cycle
+- once the sign off is done project is moved to production
+- sprint-retrospection takes
+- and then the next sprint starts
+
+

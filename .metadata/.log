@@ -708,3 +708,21 @@ org.apache.http.NoHttpResponseException: marketplace.yatta.de:443 failed to resp
 	at de.yatta.eclipse.launcher.communication.utils.RequestTemplate.execute(RequestTemplate.java:200)
 	at de.yatta.platform.marketplace.licensing.client.LicensingClient$1.run(LicensingClient.java:500)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY de.yatta.platform.marketplace.licensing.client 2 0 2023-07-27 10:10:03.411
+!MESSAGE Could not receive a valid response for solution feature de.yatta.feature.roundtrip from the license server.
+!STACK 0
+org.apache.http.client.HttpResponseException: status code: 502, reason phrase: Bad Gateway: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+</body>
+</html>
+
+	at de.yatta.eclipse.launcher.communication.utils.RequestTemplate.handleResponseStatus(RequestTemplate.java:506)
+	at de.yatta.eclipse.launcher.communication.utils.RequestTemplate.handleResponse(RequestTemplate.java:427)
+	at de.yatta.eclipse.launcher.communication.utils.RequestTemplate$TemplateResponseHandler.handleResponse(RequestTemplate.java:585)
+	at org.apache.http.client.fluent.Response.handleResponse(Response.java:90)
+	at de.yatta.eclipse.launcher.communication.utils.RequestTemplate.execute(RequestTemplate.java:200)
+	at de.yatta.platform.marketplace.licensing.client.LicensingClient$1.run(LicensingClient.java:500)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

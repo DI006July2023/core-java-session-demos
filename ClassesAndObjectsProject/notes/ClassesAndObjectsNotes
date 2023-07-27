@@ -156,7 +156,10 @@ interface MyInterface{
 }
 
 
-class  ------> class
+class  ---extends---> class
+class ---implements----> interface, interface, interface...
+interface ----extends----> interface, interface....
+interface ------> class (not valid)
 
 
 
