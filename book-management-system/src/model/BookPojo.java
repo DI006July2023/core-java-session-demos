@@ -1,13 +1,15 @@
 package model;
 
+import java.time.LocalDate;
+
 public class BookPojo {
 	private int bookId;
 	private String bookTitle;
 	private String bookAuthor;
 	private String bookGenre;
+	private LocalDate bookPublished;
 	private int bookCost;
 	private String bookImageUrl;
-	
 	
 	// a transfer object at the max contains the following
 	// constructors
@@ -16,14 +18,16 @@ public class BookPojo {
 	// equals()
 	// hashcode()
 
+	// Lombok framework - helps to generate constructors, getters and setters
 	
-	public BookPojo(int bookId, String bookTitle, String bookAuthor, String bookGenre, int bookCost,
-			String bookImageUrl) {
-		//super();
+	public BookPojo(int bookId, String bookTitle, String bookAuthor, String bookGenre, LocalDate bookPublished,
+			int bookCost, String bookImageUrl) {
+		super();
 		this.bookId = bookId;
 		this.bookTitle = bookTitle;
 		this.bookAuthor = bookAuthor;
 		this.bookGenre = bookGenre;
+		this.bookPublished = bookPublished;
 		this.bookCost = bookCost;
 		this.bookImageUrl = bookImageUrl;
 	}
@@ -35,7 +39,7 @@ public class BookPojo {
 	public void setBookId(int bookId) {
 		this.bookId = bookId;
 	}
-	
+
 	public String getBookTitle() {
 		return bookTitle;
 	}
@@ -60,6 +64,14 @@ public class BookPojo {
 		this.bookGenre = bookGenre;
 	}
 
+	public LocalDate getBookPublished() {
+		return bookPublished;
+	}
+
+	public void setBookPublished(LocalDate bookPublished) {
+		this.bookPublished = bookPublished;
+	}
+
 	public int getBookCost() {
 		return bookCost;
 	}
@@ -74,5 +86,6 @@ public class BookPojo {
 
 	public void setBookImageUrl(String bookImageUrl) {
 		this.bookImageUrl = bookImageUrl;
-	}	
+	}
+	
 }

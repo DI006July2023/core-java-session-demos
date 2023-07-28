@@ -37,6 +37,7 @@ bookId
 bookTitle
 bookAuthor
 bookGenre
+bookPublished
 bookCost
 bookImageUrl
 	
