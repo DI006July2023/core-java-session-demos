@@ -22,14 +22,20 @@ public class BookDaoCollectionImpl implements BookDao{
 
 	@Override
 	public BookPojo addBook(BookPojo newBook) {
-		// TODO Auto-generated method stub
-		return null;
+		int newBookId = bookDataStore.get(bookDataStore.size()-1).getBookId() + 1; // my own logic to compute the new book id
+		newBook.setBookId(newBookId);
+		bookDataStore.add(newBook.copyBookData());
+		return newBook;
 	}
 
 	@Override
 	public BookPojo updateBook(BookPojo updateBook) {
-		// TODO Auto-generated method stub
-		return null;
+		for(int i=0;i<bookDataStore.size();i++) {
+			if(bookDataStore.get(i).getBookId() == updateBook.getBookId()) {
+				bookDataStore.set(i, updateBook.copyBookData());
+			}
+		}
+		return updateBook;
 	}
 
 	@Override
@@ -50,14 +56,24 @@ public class BookDaoCollectionImpl implements BookDao{
 
 	@Override
 	public BookPojo fetchById(int bookId) {
-		// TODO Auto-generated method stub
-		return null;
+		BookPojo returnBookPojo = null;
+		for(int i=0;i<bookDataStore.size();i++) {
+			if(bookDataStore.get(i).getBookId() == bookId) {
+				returnBookPojo = bookDataStore.get(i).copyBookData();
+			}
+		}
+		return returnBookPojo;
 	}
 
 	@Override
 	public List<BookPojo> fetchByGenre(String bookGenre) {
-		// TODO Auto-generated method stub
-		return null;
+		List<BookPojo> returnBookPojoByGenre = new ArrayList<BookPojo>();
+		for(int i=0;i<bookDataStore.size();i++) {
+			if(bookDataStore.get(i).getBookGenre().equals(bookGenre)) {
+				returnBookPojoByGenre.add(bookDataStore.get(i).copyBookData());
+			}
+		}
+		return returnBookPojoByGenre;
 	}
 
 	@Override

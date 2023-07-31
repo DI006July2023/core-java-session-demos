@@ -88,4 +88,10 @@ public class BookPojo {
 		this.bookImageUrl = bookImageUrl;
 	}
 	
+	public BookPojo copyBookData() {
+		// incoming bookPojo object will be copied to the returning bookPojo object
+		BookPojo returningBookPojo = new BookPojo(this.bookId, this.bookTitle, this.bookAuthor, this.bookGenre, 
+													this.bookPublished, this.bookCost, this.bookImageUrl);
+		return returningBookPojo;
+	}
 }
