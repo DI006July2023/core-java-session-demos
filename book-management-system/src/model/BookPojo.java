@@ -94,4 +94,13 @@ public class BookPojo {
 													this.bookPublished, this.bookCost, this.bookImageUrl);
 		return returningBookPojo;
 	}
+
+	@Override
+	public String toString() {
+		return "BookPojo [bookId=" + bookId + ", bookTitle=" + bookTitle + ", bookAuthor=" + bookAuthor + ", bookGenre="
+				+ bookGenre + ", bookPublished=" + bookPublished + ", bookCost=" + bookCost + ", bookImageUrl="
+				+ bookImageUrl + "]";
+	}
+	
+	
 }

@@ -1,8 +1,17 @@
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
+
+import model.BookPojo;
+import service.BookService;
+import service.BookServiceImpl;
 
 public class BookManagementSystemMain {
 	
 	public static void main(String[] args) {
+		
+		//BookServiceImpl bookServiceImpl = new BookServiceImpl(); // not recomended as the class is not abstracted
+		BookService bookService = new BookServiceImpl();
 		
 		Scanner scan = new Scanner(System.in);
 		char con = 'n';
@@ -22,22 +31,73 @@ public class BookManagementSystemMain {
 			System.out.println("************************");
 			switch(option) {
 				case 1:
-					System.out.println("Book added...");
+					System.out.println("Please enter the details of the book: ");
+					System.out.println("Enter Book Title : ");
+					scan.nextLine();
+					String bookTitle = scan.nextLine();
+					
+					System.out.println("Enter Book Author : ");
+					String bookAuthor = scan.nextLine();
+					
+					System.out.println("Enter Book Genre : ");
+					String bookGenre = scan.nextLine();
+					
+					System.out.println("Enter Book Published Date (yyyy-mm-dd) : ");
+					String bookPublished = scan.nextLine();
+					LocalDate bookPublishedDate = LocalDate.parse(bookPublished);
+					
+					System.out.println("Enter Book Cost : ");
+					int bookCost = scan.nextInt();
+					
+					BookPojo newBookPojo = new BookPojo(0, bookTitle, bookAuthor, bookGenre, bookPublishedDate, bookCost, "");
+					
+					BookPojo returnedBookPojo = bookService.addBook(newBookPojo);
+					
+					System.out.println("Book added succesfully!!");
+					System.out.println("New Book ID is: " + returnedBookPojo.getBookId());
+					
 					break;
 				case 2:
 					System.out.println("Book remove...");
 					break;
 				case 3:
-					System.out.println("Book updated...");
+					
 					break;
 				case 4:
-					System.out.println("Book fetched...");
+					List<BookPojo> allBooks = bookService.fetchAllBooks();
+					for(BookPojo eachBook: allBooks) {
+						//System.out.println(eachBook.toString());
+						System.out.println(eachBook);
+					}
 					break;
 				case 5:
-					System.out.println("Book fetched...");
+					System.out.println("Enter the book ID to fetch the book:");
+					int bookId = scan.nextInt();
+					BookPojo fetchedBook = bookService.fetchById(bookId);
+					if(fetchedBook == null) {
+						System.out.println("Sorry! Book with this ID does not exist!!");
+						break;
+					}else {
+						// print the book info
+						System.out.println(fetchedBook);
+					}
+					
 					break;
 				case 6:
-					System.out.println("Book fetched...");
+					System.out.println("Enter the book genre to fetch the books:");
+					scan.nextLine();
+					String inputBookGenre = scan.nextLine();
+					List<BookPojo> allBookGenre = bookService.fetchByGenre(inputBookGenre);
+					if(allBookGenre.isEmpty()) {
+						System.out.println("Sorry! Books with this genre does not exist!!");
+						break;
+					}else {
+						// print the all the book info
+						for(BookPojo eachBook: allBookGenre) {
+							//System.out.println(eachBook.toString());
+							System.out.println(eachBook);
+						}
+					}
 					break;
 				case 7:
 					System.out.println("Writtern to a file...");

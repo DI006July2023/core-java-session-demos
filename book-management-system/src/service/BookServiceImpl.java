@@ -54,6 +54,4 @@ public class BookServiceImpl implements BookService {
 		return bookDao.writeToFile(allBooks); // Dao impl not yet writtern
 	}
 
-	
-
 }
