@@ -9,6 +9,7 @@ import model.BookPojo;
 public class BookDaoCollectionImpl implements BookDao{
 
 	// here I will use a collection as my data store
+	// this collection is volatile
 	List<BookPojo> bookDataStore = new ArrayList<BookPojo>(); // this is our temporary DB, until we learn DB
 	
 	public BookDaoCollectionImpl() {
@@ -77,7 +78,7 @@ public class BookDaoCollectionImpl implements BookDao{
 	}
 
 	@Override
-	public boolean writeToFile(List<BookPojo> allBooks) {
+	public boolean writeToFile() {
 		// TODO Auto-generated method stub
 		return false;
 	}

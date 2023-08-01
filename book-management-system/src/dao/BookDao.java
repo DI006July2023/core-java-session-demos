@@ -13,6 +13,6 @@ public interface BookDao {
 	List<BookPojo> fetchAllBooks();
 	BookPojo fetchById(int bookId);
 	List<BookPojo> fetchByGenre(String bookGenre);
-	boolean writeToFile(List<BookPojo> allBooks);
+	boolean writeToFile();
 	
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import dao.BookDao;
 import dao.BookDaoCollectionImpl;
+import dao.BookDaoFileCollectionImpl;
 import model.BookPojo;
 
 public class BookServiceImpl implements BookService {
@@ -16,7 +17,8 @@ public class BookServiceImpl implements BookService {
 	BookDao bookDao = null; // BookServiceImpl is dependent on BookDaoCollectionImpl
 	
 	public BookServiceImpl() {
-		bookDao = new BookDaoCollectionImpl();
+		//bookDao = new BookDaoCollectionImpl();
+		bookDao = new BookDaoFileCollectionImpl();
 	}
 
 	@Override
@@ -50,8 +52,8 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public boolean writeToFile(List<BookPojo> allBooks) {
-		return bookDao.writeToFile(allBooks); // Dao impl not yet writtern
+	public boolean writeToFile() {
+		return bookDao.writeToFile(); // Dao impl not yet writtern
 	}
 
 }

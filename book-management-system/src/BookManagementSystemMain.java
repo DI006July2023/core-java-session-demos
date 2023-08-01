@@ -138,6 +138,7 @@ public class BookManagementSystemMain {
 					System.out.println("************************");
 					System.out.println("Thankyou for using the book management system!");
 					System.out.println("************************");
+					bookService.writeToFile();
 					System.exit(0);
 			}
 			System.out.println("Do you want ot continue?(y/n)");

@@ -97,8 +97,8 @@ public class BookPojo {
 
 	@Override
 	public String toString() {
-		return "bookId=" + bookId + "::bookTitle=" + bookTitle + "::bookAuthor=" + bookAuthor + "::bookGenre="
-				+ bookGenre + "::bookPublished=" + bookPublished + "::bookCost=" + bookCost + "::bookImageUrl="
+		return "bookId=" + bookId + ":bookTitle=" + bookTitle + ":bookAuthor=" + bookAuthor + ":bookGenre="
+				+ bookGenre + ":bookPublished=" + bookPublished + ":bookCost=" + bookCost + ":bookImageUrl="
 				+ bookImageUrl;
 	}
 	
