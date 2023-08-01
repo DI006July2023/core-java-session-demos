@@ -58,10 +58,42 @@ public class BookManagementSystemMain {
 					
 					break;
 				case 2:
-					System.out.println("Book remove...");
+					System.out.println("Enter the book ID to be removed:");
+					int removeBookId = scan.nextInt();
+					BookPojo removeFetchedBook = bookService.fetchById(removeBookId);
+					if(removeFetchedBook == null) {
+						System.out.println("Sorry! Book with this ID does not exist!!");
+						break;
+					}else {
+						// print the book info
+						System.out.println(removeFetchedBook);
+						System.out.println("Are you sure you want ot remove this book?(y/n):");
+						char ans = scan.next().charAt(0);
+						if(ans == 'y') {
+							bookService.removeBook(removeBookId);
+							System.out.println("The book has been removed!!");
+						}
+					}
 					break;
 				case 3:
-					
+					System.out.println("Enter the book ID to be updated:");
+					int updateBookId = scan.nextInt();
+					BookPojo updateFetchedBook = bookService.fetchById(updateBookId);
+					if(updateFetchedBook == null) {
+						System.out.println("Sorry! Book with this ID does not exist!!");
+						break;
+					}else {
+						// print the book info
+						System.out.println(updateFetchedBook);
+						System.out.println("Please enter the new cost:");
+						int updateBookCost = scan.nextInt();
+						
+						updateFetchedBook.setBookCost(updateBookCost);// this replaces the old book cost with 
+																				//new book cost in the pojo
+						
+						bookService.updateBook(updateFetchedBook);
+						System.out.println("Book information updated successfully!!");
+					}
 					break;
 				case 4:
 					List<BookPojo> allBooks = bookService.fetchAllBooks();
