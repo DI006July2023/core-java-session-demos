@@ -67,7 +67,7 @@ public class BookManagementSystemMain {
 					}else {
 						// print the book info
 						System.out.println(removeFetchedBook);
-						System.out.println("Are you sure you want ot remove this book?(y/n):");
+						System.out.println("Are you sure you want to remove this book?(y/n):");
 						char ans = scan.next().charAt(0);
 						if(ans == 'y') {
 							bookService.removeBook(removeBookId);
@@ -126,7 +126,6 @@ public class BookManagementSystemMain {
 					}else {
 						// print the all the book info
 						for(BookPojo eachBook: allBookGenre) {
-							//System.out.println(eachBook.toString());
 							System.out.println(eachBook);
 						}
 					}
@@ -141,7 +140,7 @@ public class BookManagementSystemMain {
 					bookService.writeToFile();
 					System.exit(0);
 			}
-			System.out.println("Do you want ot continue?(y/n)");
+			System.out.println("Do you want to continue?(y/n)");
 			con = scan.next().charAt(0); 
 		}while(con == 'y');
 		

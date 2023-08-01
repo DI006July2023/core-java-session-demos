@@ -25,15 +25,16 @@ public class BookDaoFileCollectionImpl implements BookDao {
 		try {
 			// 1.
 			File myFile = new File("FileDB.txt");
+			//myFile.createNewFile(); // Error fix 3: above line only create an object(instance) representation
 			// 2.
-			FileReader fr = new FileReader("FileDB.txt");
+			FileReader fr = new FileReader(myFile);
 			// 3. 
 			BufferedReader br = new BufferedReader(fr);
 			// 4.
 			String line = null;
 			while((line=br.readLine()) != null) {
-				StringTokenizer st = new StringTokenizer("=:");
-				
+				StringTokenizer st = new StringTokenizer(line, "=:"); // Error fix 1: did not pass line as the first parameter
+			
 				st.nextToken();
 				String bId = st.nextToken();
 				int bookId = Integer.parseInt(bId);
@@ -138,16 +139,16 @@ public class BookDaoFileCollectionImpl implements BookDao {
 		
 		try {
 			// 1.
-			//File myFile = new File("FileDB.txt"); // if the file FileDB.txt does not exist, it will be created automatically
+			File myFile = new File("FileDB.txt"); // if the file FileDB.txt does not exist, it will be created automatically
 			// 2.
-			FileWriter fw = new FileWriter("FileDB.txt");
+			FileWriter fw = new FileWriter(myFile);
 			// 3.
 			// traverse through the collection bookFileDataStore
 			// as we traverse write the string represtation of BookPojo objects to the file
 			for(BookPojo eachBook: bookFileDataStore) {
-				System.out.println(eachBook.toString());
-				fw.write(90);
-				//fw.write(eachBook.toString().toCharArray());
+				fw.write((eachBook.toString()+"\n").toCharArray());
+				fw.flush();// Error fix 2: did not call flush after writing to the FileWriter fw 
+				
 			}	
 			
 		} catch (IOException e) {
