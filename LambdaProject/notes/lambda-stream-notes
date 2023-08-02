@@ -1,0 +1,36 @@
+functional interfaces
+---------------------
+	- these are interfaces with exactly one abstract method
+	- there can be any number of default and static methods
+	- SAM (Single Abstract Method)
+	- eg. Runnable, Comparator
+	- in Java 1.8 the annotation @FunctionalInterface was introduced to mark interfaces as functional interface
+
+3 ways of implementing the functional interface
+-----------------------------------------------
+	- conventional way by creating a class that implements the functional interface
+		- this works for both - functional and non-functional interfaces
+	- anonymous class implementation of functional interface
+		- this works for both - functional and non-functional interfaces
+	- lambda expressions to implement functional interface
+		- this works only for functional interfaces
+
+4 basic in-built functional interfaces
+---------------------------------------
+Consumer ---- very important
+Supplier
+Function
+Predicate ----  very very important
+
+Stream
+-------
+	- intermidiate operation
+	- terminal operation
+
+a stream always has to end with a terminal operation
+we can have zero or any number of intermediate operations in between
+
+tips to find out
+----------------
+if the function returns Stream, it is a intermediate operation
+if the function returns other than Stream, it is an terminal opertation
