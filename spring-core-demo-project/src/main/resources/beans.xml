@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="account" class="springcorexml.Account">
+		<!-- <constructor-arg name="accNumber" value="10002"></constructor-arg>
+		<constructor-arg name="accName" value="XYZ"></constructor-arg> -->
+		<property name="accNumber" value="10003"></property>
+		<property name="accName" value="ASD"></property>
+	</bean>
+
+	<bean id="address" class="springcorexml.Address">
+		<constructor-arg name="streetName" value="street1"></constructor-arg>
+		<constructor-arg name="city" value="Marietta"></constructor-arg>
+	</bean>
+	
+	<bean id="employee" class="springcorexml.Employee">
+		<constructor-arg name="empId" value="2001"></constructor-arg>
+		<constructor-arg name="empName" value="Emp1Name"></constructor-arg>
+		<constructor-arg name="address" ref="address"></constructor-arg>
+	</bean>
+</beans>

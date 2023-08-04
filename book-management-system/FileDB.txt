@@ -1,2 +1,3 @@
 bookId=101:bookTitle=Harry Potter and the Order of Phoenix:bookAuthor=J.K.Rowling:bookGenre=Fantasy:bookPublished=2010-03-03:bookCost=125:bookImageUrl=
 bookId=102:bookTitle=Harry Potter and the Deathly Hallows:bookAuthor=J.K.Rowling:bookGenre=Fantasy:bookPublished=2020-05-05:bookCost=110:bookImageUrl=
+bookId=103:bookTitle=Test:bookAuthor=Test:bookGenre=Test:bookPublished=2010-03-03:bookCost=100:bookImageUrl=

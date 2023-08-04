@@ -12,6 +12,7 @@ public class BookPojo {
 	private String bookImageUrl;
 	
 	// a transfer object at the max contains the following
+	// private variables
 	// constructors
 	// public getters/setters
 	// toString()

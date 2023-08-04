@@ -1,5 +1,7 @@
 package service;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 import dao.BookDao;
@@ -16,7 +18,7 @@ public class BookServiceImpl implements BookService {
 	
 	BookDao bookDao = null; // BookServiceImpl is dependent on BookDaoCollectionImpl
 	
-	public BookServiceImpl() {
+	public BookServiceImpl()throws FileNotFoundException, IOException {
 		//bookDao = new BookDaoCollectionImpl();
 		bookDao = new BookDaoFileCollectionImpl();
 	}
@@ -52,7 +54,7 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public boolean writeToFile() {
+	public boolean writeToFile()throws IOException {
 		return bookDao.writeToFile(); // Dao impl not yet writtern
 	}
 

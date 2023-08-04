@@ -15,14 +15,13 @@ import model.BookPojo;
 
 public class BookDaoFileCollectionImpl implements BookDao {
 	
-	// this is a collection which will holds the data read from the file at the begining of the appln
+	// this is a collection which will hold the data read from the file at the begining of the appln
 	// likewise the data in this collection should be writern to a file before the program shuts down
 	List<BookPojo> bookFileDataStore = new ArrayList<BookPojo>();  
 	
-	
-	public BookDaoFileCollectionImpl() {
+	public BookDaoFileCollectionImpl()throws FileNotFoundException, IOException {
 		// reading the contents of the file and adding the data to the collection bookFileDataStore
-		try {
+		//try {
 			// 1.
 			File myFile = new File("FileDB.txt");
 			//myFile.createNewFile(); // Error fix 3: above line only create an object(instance) representation
@@ -33,6 +32,15 @@ public class BookDaoFileCollectionImpl implements BookDao {
 			// 4.
 			String line = null;
 			while((line=br.readLine()) != null) {
+				
+				// "bookId=101:bookTitle=Harry Potter and the Order of Phoenix:bookAuthor=J.K.Rowling:bookGenre=Fantasy:bookPublished=2010-03-03:bookCost=125:bookImageUrl="
+				// bookId
+				// 101
+				// bookTitle
+				// Harry Potter and the Order of Phoenix
+				// bookGenre
+				// Fantasy
+				
 				StringTokenizer st = new StringTokenizer(line, "=:"); // Error fix 1: did not pass line as the first parameter
 			
 				st.nextToken();
@@ -59,16 +67,14 @@ public class BookDaoFileCollectionImpl implements BookDao {
 				BookPojo bookPojo = new BookPojo(bookId, bookTitle, bookAuthor, bookGenre, bookPublished, bookCost, "");
 				bookFileDataStore.add(bookPojo);
 				
-			}
-			
-			
-		} catch (FileNotFoundException e) {
+			}	
+		//} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
+			//e.printStackTrace();
+		//} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			//e.printStackTrace();
+		//}
 	}
 
 	@Override
@@ -133,11 +139,9 @@ public class BookDaoFileCollectionImpl implements BookDao {
 	}
 
 	@Override
-	public boolean writeToFile() {
-		
+	public boolean writeToFile()throws IOException {
 		// to work with files, lets create a File object representing the file
-		
-		try {
+		//try {
 			// 1.
 			File myFile = new File("FileDB.txt"); // if the file FileDB.txt does not exist, it will be created automatically
 			// 2.
@@ -147,15 +151,13 @@ public class BookDaoFileCollectionImpl implements BookDao {
 			// as we traverse write the string represtation of BookPojo objects to the file
 			for(BookPojo eachBook: bookFileDataStore) {
 				fw.write((eachBook.toString()+"\n").toCharArray());
-				fw.flush();// Error fix 2: did not call flush after writing to the FileWriter fw 
-				
+				fw.flush();// Error fix 2: did not call flush after writing to the FileWriter fw 	
 			}	
 			
-		} catch (IOException e) {
+		//} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		//	e.printStackTrace();
+		//}
 		
 		return true;
 	}

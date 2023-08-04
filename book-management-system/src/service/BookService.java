@@ -1,5 +1,6 @@
 package service;
 
+import java.io.IOException;
 import java.util.List;
 
 import model.BookPojo;
@@ -12,5 +13,5 @@ public interface BookService {
 	List<BookPojo> fetchAllBooks();
 	BookPojo fetchById(int bookId);
 	List<BookPojo> fetchByGenre(String bookGenre);
-	boolean writeToFile();
+	boolean writeToFile()throws IOException;
 }
