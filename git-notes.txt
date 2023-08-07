@@ -1,0 +1,65 @@
+pre-requisites
+---------------
+1. make sure git is installed in your local computer
+2. create a GitHub account in the GitHub website
+
+images referred to
+-------------------
+CVCS(Centralized Version Constrol Software) vs DVCS(Distributed Version Constrol Software)
+	- https://k21academy.com/wp-content/uploads/2020/07/dvcs.png
+git diagram
+	- https://champlintechnologiesllc.com/wp-content/uploads/2017/07/git-basic_600x492.jpg
+	- https://external-preview.redd.it/2mqNv1xwHnQtZtKQTGg7uPws76QcJI6UDmPi53tB6ng.jpg?auto=webp&s=0b416b4e3f2fcde21f005210d6b2cc4c804507f8
+git workflow
+	- https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+
+terms
+------
+remote repository
+local repository
+
+steps done in todays(7th Aug) session
+-------------------------------------
+1) create a remote repository in our github account , we created a remote repository called git-trial
+2) create a working diretory in your local computer, a working directory is just a folder in your local computer, we created git-practise
+3) create some files in the working directory like sample.txt
+4) create the local repository in your working directory, 
+	- for this open git bash in your working directory, 
+	- git bash is a terminal where you can type your git commands
+	- run the command
+		- git init
+5) a hidden folder in the name .git is created. This .git folder is my local repository
+	- deleting the .git folder is like deleting the local repository
+
+6) configure git user name and email - refer engage
+7) git config --list
+	- this command list all the git configuraion
+8) add all the files from working directory to the staging
+	- git add .
+9) commit the files to the local repository
+	- git commit -m "first commit"
+10) change the branch name from master to main in local repo
+	- git branch -M main
+11) set the remote repository to which we will push the code in step 12
+	- git remote add origin https://github.com/DI006July2023/git-trial.git
+12) push the code to the remote repository
+	- git push -u origin main
+
+DOS - Disk Operating system
+unix - 
+
+the demo was done with gitbash
+------------------------------
+other ways in which you can run your git commands
+	- gitbash
+		- it is a unix/linux terminal
+		- here we type the git commands
+		- we get git bash when we install git in our local computer
+	- github desktop
+		- here we don't type the command, we click buttons and the work is done
+	- ide plugins
+		- here git plugins are installed in the IDE
+		- and files are pushed and pulled directly from the IDE
+	- sourcetree
+		- used extensively in projects
+		- helps to have a visual idea of the branches and repos created
