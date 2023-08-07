@@ -7,6 +7,7 @@ import java.util.List;
 import dao.BookDao;
 import dao.BookDaoCollectionImpl;
 import dao.BookDaoFileCollectionImpl;
+import exception.BooksNotFoundException;
 import model.BookPojo;
 
 public class BookServiceImpl implements BookService {
@@ -18,7 +19,7 @@ public class BookServiceImpl implements BookService {
 	
 	BookDao bookDao = null; // BookServiceImpl is dependent on BookDaoCollectionImpl
 	
-	public BookServiceImpl()throws FileNotFoundException, IOException {
+	public BookServiceImpl()throws FileNotFoundException, IOException{
 		//bookDao = new BookDaoCollectionImpl();
 		bookDao = new BookDaoFileCollectionImpl();
 	}
@@ -39,8 +40,12 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public List<BookPojo> fetchAllBooks() {
-		return bookDao.fetchAllBooks();
+	public List<BookPojo> fetchAllBooks() throws BooksNotFoundException{
+		List<BookPojo> allBooks = bookDao.fetchAllBooks();
+		if(allBooks.size() == 0) {
+			throw new BooksNotFoundException();
+		}
+		return allBooks;
 	}
 
 	@Override

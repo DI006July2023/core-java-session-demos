@@ -65,4 +65,25 @@ User stories in my project
 - sprint-retrospection takes
 - and then the next sprint starts
 
+exception handling
+-------------------
+from the code we see that the dao layer is capable of throwing FileNotException and IOException
+
+if an exception occurs in the project it has to be handled in one common place and not in all the layers
+for now the common place here would be the presentation layer
+so if the exception occurs in any of the other layers(Service or Dao) , 
+		just propagate the exception to the presentation layer and 
+		let the presentation layer have the try...catch to handle it   
+
+custom exception
+-----------------
+BooksNotFoundException
+	- create the custom exception
+	- use the custom exception
+		- explicitly throw a custom exception
+		- in-built exception are thrown implicitly whenvere an exception occurs in your code. So we dont have to throw them explicitly.
+	- write the handler(catch block) for the custom exception by propagating it to the correct layer
+
+to create a checked exception, make your class extend Exception
+to create an unchecked exception, make your class extend RuntimeException
 

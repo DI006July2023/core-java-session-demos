@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
+import exception.BooksNotFoundException;
 import model.BookPojo;
 import service.BookService;
 import service.BookServiceImpl;
@@ -27,7 +28,7 @@ public class BookManagementSystemView {
 			// a BIG don't - never leave a catch block empty
 			System.out.println("There was some issue with the input. Please try again!");
 		} 
-
+		
 		Scanner scan = new Scanner(System.in);
 		char con = 'n';
 		do {
@@ -112,11 +113,17 @@ public class BookManagementSystemView {
 				}
 				break;
 			case 4:
-				List<BookPojo> allBooks = bookService.fetchAllBooks();
-				for (BookPojo eachBook : allBooks) {
-					// System.out.println(eachBook.toString());
-					System.out.println(eachBook);
+				List<BookPojo> allBooks;
+				try {
+					allBooks = bookService.fetchAllBooks();
+					for (BookPojo eachBook : allBooks) {
+						// System.out.println(eachBook.toString());
+						System.out.println(eachBook);
+					}
+				} catch (BooksNotFoundException e1) {
+					System.out.println(e1.getMessage());
 				}
+				
 				break;
 			case 5:
 				System.out.println("Enter the book ID to fetch the book:");

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import exception.BooksNotFoundException;
 import model.BookPojo;
 
 public class BookDaoFileCollectionImpl implements BookDao {
@@ -31,6 +32,7 @@ public class BookDaoFileCollectionImpl implements BookDao {
 			BufferedReader br = new BufferedReader(fr);
 			// 4.
 			String line = null;
+			
 			while((line=br.readLine()) != null) {
 				
 				// "bookId=101:bookTitle=Harry Potter and the Order of Phoenix:bookAuthor=J.K.Rowling:bookGenre=Fantasy:bookPublished=2010-03-03:bookCost=125:bookImageUrl="
@@ -75,6 +77,7 @@ public class BookDaoFileCollectionImpl implements BookDao {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
 		//}
+			
 	}
 
 	@Override
