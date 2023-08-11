@@ -1,0 +1,1 @@
+bookId=101:bookTitle=Harry Potter and the Deathly Hallows:bookAuthor=J.K.Rowling:bookGenre=Fiction:bookPublished=2010-04-04:bookCost=125:bookImageUrl=

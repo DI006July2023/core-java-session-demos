@@ -3,7 +3,6 @@ package dao;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 import model.BookPojo;
 
@@ -12,7 +11,6 @@ public class BookDaoCollectionImpl implements BookDao{
 	// here I will use a collection as my data store
 	// this collection is volatile
 	List<BookPojo> bookDataStore = new ArrayList<BookPojo>(); // this is our temporary DB, until we learn DB
-	//List<BookPojo> bookDataStore = new Vector<BookPojo>();
 	
 	public BookDaoCollectionImpl() {
 		BookPojo pojo1 = new BookPojo(101, "HarryPotter and the Order of Phoenix", "J.K.Rowling", "Fantasy", LocalDate.of(1995, 10, 5), 100, "");
@@ -23,7 +21,7 @@ public class BookDaoCollectionImpl implements BookDao{
 		bookDataStore.add(pojo3);
 	}
 
-	@Override
+
 	public BookPojo addBook(BookPojo newBook) {
 		int newBookId = bookDataStore.get(bookDataStore.size()-1).getBookId() + 1; // my own logic to compute the new book id
 		newBook.setBookId(newBookId);
@@ -31,7 +29,6 @@ public class BookDaoCollectionImpl implements BookDao{
 		return newBook;
 	}
 
-	@Override
 	public BookPojo updateBook(BookPojo updateBook) {
 		for(int i=0;i<bookDataStore.size();i++) {
 			if(bookDataStore.get(i).getBookId() == updateBook.getBookId()) {
@@ -41,7 +38,6 @@ public class BookDaoCollectionImpl implements BookDao{
 		return updateBook;
 	}
 
-	@Override
 	public void removeBook(int bookId) {
 		//i am able to use this for loop because List is indexed
 		for(int i=0;i<bookDataStore.size();i++) {
@@ -51,13 +47,13 @@ public class BookDaoCollectionImpl implements BookDao{
 		}
 	}
 
-	@Override
+	
 	public List<BookPojo> fetchAllBooks() {
 		List<BookPojo> returnBookDataStore = new ArrayList<BookPojo>(bookDataStore);
 		return returnBookDataStore;
 	}
 
-	@Override
+
 	public BookPojo fetchById(int bookId) {
 		BookPojo returnBookPojo = null;
 		for(int i=0;i<bookDataStore.size();i++) {
@@ -68,7 +64,7 @@ public class BookDaoCollectionImpl implements BookDao{
 		return returnBookPojo;
 	}
 
-	@Override
+	
 	public List<BookPojo> fetchByGenre(String bookGenre) {
 		List<BookPojo> returnBookPojoByGenre = new ArrayList<BookPojo>();
 		for(int i=0;i<bookDataStore.size();i++) {
@@ -79,7 +75,7 @@ public class BookDaoCollectionImpl implements BookDao{
 		return returnBookPojoByGenre;
 	}
 
-	@Override
+
 	public boolean writeToFile() {
 		// TODO Auto-generated method stub
 		return false;

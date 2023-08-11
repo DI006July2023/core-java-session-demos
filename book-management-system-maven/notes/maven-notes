@@ -1,0 +1,59 @@
+Scrum team consists of 
+----------------------
+developers
+testers
+operations
+	- pull the code from github
+	- build the code
+		- clean/erase the .class
+		- code will be compiled so the new .class files are generated
+		- unit tests are run and the unit tests have to passs
+		- package the application into a JAR(Java Archive) or WAR(Web Archive)  file
+		- deploy the application(jar file/war file) in the production evironment(on primises environment/ cloud environment)
+		- Devops - Developers and Operations
+
+Cloud computing service providers
+---------------------------------
+AWS -  Amazon web Services
+Microsoft Azure
+
+IAAS - infra structure as a service
+SAAS - Software as a service
+PAAS - Platform as service
+
+Maven
+------
+maven official website  - https://maven.apache.org/what-is-maven.html
+maven -  a build tool
+	- 1) helps to build your application
+	- 2) manage your dependencies(other jar files which your project wants to make use of, for example jar file for JUnit, Spring)
+
+the ide also builds your application
+
+
+how do i work with maven
+------------------------
+1) getting maven(2 ways)
+	- install maven software in your laptop
+	- use the maven plugins which are by default available in most of the ides
+2) in demos and going forward we will use the maven plugin
+3) to get started you should have a maven project
+	we can get a maven project in 3 ways
+		- create a new maven project in your ide( i would use this in the demos)
+		- convert an existing project to a maven project
+		- use maven command mvn to create a maven project in the command prompt/terminal and then import it into your ide
+4) how do you figure out the project is a maven project?
+	- maven expects the project to have a particular folder structure
+		src/main/java
+		src/main/resources
+		src/test/java
+		src/test/resources
+	- the project will have the pom.xml file (Project Object Model)
+5) add dependencies to your pom.xml and save it
+6) now maven downloads all the dependencies from the remote server to your computer and saves them in .m2 folder (C:\Users\Poongs\.m2\repository\org\junit\junit5-engine\5.0.0-ALPHA)
+7) this m2 server is your loacl maven repository.
+8) everytime you add a dependency in your project's pom.xml file, maven first checks for the dependency in the local .m2 maven repository and uses it if present, else downloads it from remote repository.
+9) we may have to do a maven force update on the project to make the project to be in sync with the maven dependencies. 
+
+
+

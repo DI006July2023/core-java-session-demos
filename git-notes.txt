@@ -63,3 +63,62 @@ other ways in which you can run your git commands
 	- sourcetree
 		- used extensively in projects
 		- helps to have a visual idea of the branches and repos created
+
+ways to get the files from the remote repository to the local computer
+------------------------------------------------------------------------
+1) download the remote repo
+
+2) clone the repo
+	- git clone <github repo url>
+	- when we clone, the entire repo comes to your local laptop
+	- and the .git folder(local repository) will be present
+	- we clone the repo only once
+	- and pull the repo to your local computer every time changes are made to the remote repository
+	
+3) pull the repo
+	- pull the repo to your local computer every time changes are made to the remote repository
+
+
+working with git branches
+-------------------------
+1) my remote repo has a main branch
+2) origin main -  refers to the main branch in the remote repo
+3) main/master - refers to the main branch in the local repo, if it is master change it to main
+4) change master branch to main branch in local repository
+	- git branch -M main
+5) from the main branch a develop branch is created in the remote
+6) lets say a developer starts working on a user story
+	- should first pull the develop the branch to the local
+	- creates a feature branch in the name feature/US001
+	- starts working on this feature branch
+	- if at any point of time he/she wants to discard the changes, can delete the feature branch and create again
+	- push the code upstream to the feature branch in the remote
+	- and then raise a pull request - this is raised to merge the feature branch with the develop branch
+	- merge conflicts can arise and that is a whole new story
+
+recommended levels to push yourself with git
+---------------------------------------------
+LEVEL 1 - do a simple push and pull 
+LEVEL 2 - work with branches and pull request
+LEVEL 3 - resolve merge conflicts
+
+working with branches in the demo
+---------------------------------
+1) create a remote repo git-branch-demo repo
+2) create a local repo git-branch-demo-local
+3) created a sample.txt file in working directory and pushed it remote
+4) this local repo has the main branch
+5) to list the branches in local
+	- git branch
+6) create a branch in the name feature/US001 in the local
+	- git branch feature/US001
+7) switch from main branch to feature/US001 branch in local
+8) add a new file US001Login.txt to the working dir
+9) now in git bash
+	 git push --set-upstream origin feature/US001
+   this command pushes the code from local to remote branch feature/US001(the remote branch gets created)
+10) now the developer can raise a pull request
+11) while raising the pull request specify which branch has to be merged to which branch
+12) and create the pull request
+13) another person from the team will review the pull request and merge the pull request
+
