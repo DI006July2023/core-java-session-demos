@@ -29,9 +29,21 @@ public class RoomMain {
 		
 		Room studyRoom = new Room(100, 80, 50, "Blue");
 		
+		Room studyRoom3 = new Room(80, 100, 50);
+		System.out.println("------------------------------------");
+		int num1 = 10;
+		int num2 = 20;
+		System.out.println(num1 == num2);
 		
+		// check the equality of the diningRoom and studyRoom
+		// reference equality
+		System.out.println("diningRoom == studyRoom:" + (diningRoom == studyRoom));
+		Room studyRoom2 = studyRoom;
+		System.out.println("studyRoom2 == studyRoom:" + (studyRoom2 == studyRoom));
 		
-		
+		//content equality
+		System.out.println("diningRoom.equals(studyRoom):" + (diningRoom.equals(studyRoom2)));
+		System.out.println("studyRoom3.equals(studyRoom):" + (studyRoom3.equals(studyRoom)));
 	}
 
 }

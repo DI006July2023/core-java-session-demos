@@ -44,4 +44,23 @@ public class Room {
 		int paintingCost = wallArea * labourCost;
 		return paintingCost;
 	}
+
+	@Override
+	public int hashCode() {
+		int result = this.length * this.width * this.height;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Room incomingObj = (Room) obj;// downcasting(explicit)
+		//Object obj2 = incomingObj;//upcasting(implicit)
+		boolean returnStatus = false;
+		if((this.length*this.width*this.height) == (incomingObj.length*incomingObj.width*incomingObj.height)) {
+			returnStatus=true;
+		}
+		return returnStatus;
+	}
+	
+	
 }

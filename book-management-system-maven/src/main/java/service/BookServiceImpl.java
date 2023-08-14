@@ -23,6 +23,14 @@ public class BookServiceImpl implements BookService {
 		//bookDao = new BookDaoCollectionImpl();
 		bookDao = new BookDaoFileCollectionImpl();
 	}
+	
+	// added this constructor for unit testing the service layer
+	public BookServiceImpl(BookDao bookDao) {
+		//super();
+		this.bookDao = bookDao;
+	}
+
+
 
 	@Override
 	public BookPojo addBook(BookPojo newBook) {

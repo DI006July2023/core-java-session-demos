@@ -1,0 +1,47 @@
+unit testing is testing of the smallest unit in isolation
+
+JUnit is framework which helps to perform unit testing in java
+Official website - https://junit.org/junit5/docs/current/user-guide/#overview-what-is-junit-5
+
+how to isolate the unit test?
+	- Mockito
+	- Stubs
+	
+Testing the Dao Layer
+---------------------
+- when we test the dao layer we do not want the BookDaoFileCollectionImpl to work on the actual FileDB.txt 
+	because the	contents of this file will keep changing every time we run the application(running the main method)
+	and because of this our unit test will fail due to the changing data in FileDB.txt
+- so we create a TestFileDB.txt exclusively to be used for unit testing the dao layer and we make the dao layer(BookDaoFileCollectionImpl.java) 
+	to interact with this file during unit testing instead of the actual FileDB.txt
+- by doing this during unit testing we have complete control of the data in the external file TestFileDB.txt
+- for this I had introduced a parameterized constructor in BookDaoFileCollectionImpl to take in the filename TestFileDB.txt
+- and then go ahead and write your test methods in BookDaoFileCollectionImplTest.java
+
+Testing the service layer
+-------------------------
+- remember unit testing is testing of the smallest unit in isolation
+- keeping the isolation in mind we have to test only the methods of the service layer and not any 
+	of the methods in dao layer that the service layer calls.
+- how to isolate the unit test? (2 ways)
+	- Mockito
+	- Stubs
+		- create a stub/fake dao(BookDaoFileCollectionStubImpl.java) for the dao layer
+		- the stub does not interact with external files/DB, instead works on hard coded data
+		- make the service layer interact with this stub/fake dao(BookDaoFileCollectionStubImpl.java) and 
+				not with the actual dao(BookDaoFileCollectionImpl.java)
+		- for this I had introduced a parameterized constructor in BookServiceImpl to take and object of ookDaoFileCollectionStubImpl
+		- so whenever your unit tests call the methods of the service layer, it will in turn call 
+			the methods of the stub/fake dao(BookDaoFileCollectionStubImpl.java) and not those of BookDaoFileCollectionImpl.java
+
+- All unit tests have to pass meaning we should have 100% pass percentage
+			
+What to learn further?
+- write unit tests for unhappy paths as well, for example unit test the exception handling flow as well
+- what is TDD? vs BDD? what is the approach followed in TDD?
+- try Mockito for testing unit in isolation
+- now that we have written unit tests, have we covered all of the source code and unit tested?
+	this is where code coverage comes into picture.
+	eclipse has an inbuilt code coverage tool which can be run and highlights the code that has been covered in unit testing
+	other tools are ECMA code coverage, Sonar cube/lint etc
+			
