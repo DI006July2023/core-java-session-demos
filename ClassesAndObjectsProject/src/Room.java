@@ -2,7 +2,7 @@
 public class Room {
 	int length;
 	int width;
-	int height;
+	static int height;
 	String roomColor;
 	int roomNo;
 	
@@ -62,5 +62,7 @@ public class Room {
 		return returnStatus;
 	}
 	
-	
+	static class SomeClass{
+		
+	}
 }

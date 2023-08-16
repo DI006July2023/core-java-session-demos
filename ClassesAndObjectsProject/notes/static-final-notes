@@ -1,0 +1,60 @@
+static
+------
+can be used in front of 
+	- variable(class level)
+		
+	- method
+		- these methods with common functionality accross objects
+		- they dont hold functionality specific to an object
+	- class
+		- only if it is an inner class
+		- an outter class cannot be static
+	- static blocks
+		- used  to intilaize static variables
+		- can have any number of static blocks
+		- they are called in the order in which it is written
+		- static blacks are called after the class is loaded into the memory
+
+if constructors are used to initialize non-static variables,
+how do we initialize a static variable?
+
+static int height;
+static{
+	height = 75;
+}
+
+
+Room diningRoom; // referrred to the Room class, created a Room reference variable
+1. The class is loaded to the memeory
+2. memory for static variables allocated
+3. static blocks are called automatically
+
+diningRoom = new Room(200, 150); // here we are creating the room object
+4. memory for non-static variable are allocated
+5. constructors are called automatically
+
+Room livingRoom = new Room(150, 100); // here we are creating the room object
+4. memory for non-static variable are allocated
+5. constructors are called automatically
+
+final
+-----
+can be used in front of
+	- variables/local varibales
+		- acts as a constant
+		- final double PI = 3.14;
+		   System.out.println(PI);
+		   PI = 3.15; // compiler error
+
+	- method
+		- final methods cannot be overridden
+	- class
+		- final classes cannot be extended/inherited
+
+can a class be abstract and final? - NO
+
+interfaces ------> provide a protocol to the implementing class
+abstract classes -------> provide a protocol to the extending class + gives is-a relation
+
+
+

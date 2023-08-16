@@ -1,0 +1,35 @@
+Java - programming language
+MySql - Database software
+
+
+Database Management System - DBMS
+Database - DB
+
+Database models
+----------------
+- relational database model
+   - Eg: MySql, Oracle, SQLServer, Postgres
+   - database, tables, rows, columns
+- NoSql
+   - Eg: MongoDB
+
+
+Database software
+	- client server architecture
+
+
+for a client ot reach out to the server
+---------------------------------------
+1) Ip address of the server
+2) port number - 4 digit number
+3) protocol - http, ftp, smtp
+4) credentials
+
+CLI - Command Line Interface
+GUI - Graphical User Interface
+
+
+primary key - one of the column becomes a primary key, unique values, used to uniquely identify a record
+composite keys - a combination of 2 or more columns act as the primary key
+candidate keys - can have multiple candidate keys in a table, but only one of the candidate key qualifies to become the primary key
+foreign keys 
