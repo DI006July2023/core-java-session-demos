@@ -16,6 +16,8 @@ SELECT count(book_id) FROM book_details;
 -- write a query to find the costliest book --
 SELECT book_id, max(book_cost) FROM book_details;
 SELECT * FROM book_details WHERE book_cost = (SELECT max(book_cost) FROM book_details);
+SELECT * FROM book_details WHERE book_cost IN (SELECT max(book_cost) FROM book_details);
+
 SELECT * FROM book_details WHERE book_cost = max(book_cost); -- doesn not work -- 
 
 SELECT current_date();

@@ -16,29 +16,33 @@ however MySql dialect has variations when compared to Oracle dialect
 
 Database - collection of tables
 
-SQL queries are catogorized into
---------------------------------
-1) DDL - Data Definition Language
-	- these queries deal with the structure of the table
-	- CREATE, ALTER, DROP, TRUNCATE, RENAME
-2) DML - Data Manipulation Language
-	- these queries deal with the data in the tables
-	- INSERT, UPDATE, DELETE
-3) DQL - Data Querying Language
-	- this query deals with fetching/querying the data from the table 
-	- SELECT
-4) TCL - Transaction Control Language
-	- these help with transactions
-	- COMIT, ROLLBACK
-5) DCL - Data Control Language
-	- these deal with granting and revoking priveliges to user
-	- GRANT, REVOKE
-
-Normalization
-ACID properties
-Indexes, Views
-Constraints
-functions - scalar function, aggregate functions
+Things to learn
+----------------
+1) SQL queries are catogorized into
+	1) DDL - Data Definition Language
+		- these queries deal with the structure of the table
+		- CREATE, ALTER, DROP, TRUNCATE, RENAME
+	2) DML - Data Manipulation Language
+		- these queries deal with the data in the tables
+		- INSERT, UPDATE, DELETE
+	3) DQL - Data Querying Language
+		- this query deals with fetching/querying the data from the table 
+		- SELECT
+	4) TCL - Transaction Control Language
+		- these help with transactions
+		- COMIT, ROLLBACK
+	5) DCL - Data Control Language
+		- these deal with granting and revoking priveliges to user
+		- GRANT, REVOKE
+2) Normalization
+3) ACID properties
+4) Indexes
+5) Views
+6) Constraints
+7) functions - scalar function, aggregate functions
+8) Joins
+9) Subqueries
+10) Transactions
 
 
 the clauses used in a SELECT query
@@ -133,6 +137,65 @@ TYPES of joins
 	here the join condition is automatically figured out based on matching column names in both the left and right table
 	not recomended
 
+Subqueries
+----------
+	- when we have an unknown value to compute we use a subquery to compute the unknown 
+			and then the outter query works on the unknown value
+	- the inner query is independent of the outer query
+	- correlated subquery
+		- the inner query is dependent on the outer query
+		- each record returned by the outer query is computed against each record returned by the inner query
+
+SELECT * FROM book_details WHERE book_cost = (SELECT max(book_cost) FROM book_details);
+SELECT * FROM book_details WHERE book_cost IN (SELECT max(book_cost) FROM book_details);
+
+Views
+-----
+- create views
+- updatable view
+- drop view
+
+Indexes
+-------
+- create an index on a/many column
+- drop indexes
+
+CREATE INDEX lastname_index ON worker(lastname);
+CREATE INDEX firstname_lastname_index ON worker(firstname, lastname);
+
+DROP INDEX lastname_index ON worker;
+
+Transactions
+------------
+
+rule of transaction - all queries should be executed else none should be executed
+at any point of time, we should possess consistent/correct data
+
+UPDATE checking SET balance = balance - 200.00 WHERE customer_id=10233276; // here auto commit is true and hence when this query is executed it is immediately commited to the table
+UPDATE savings SET balance = balance + 200.00 WHERE customer_id=10233276;
+
+START TRANSACTION; // auto commit is set ot false, which means any changes made after this will not reflect unitl commit is called
+UPDATE checking SET balance = balance - 200.00 WHERE customer_id=10233276;
+UPDATE savings SET balance = balance + 200.00 WHERE customer_id=10233276;
+//COMMIT;
+ROLLBACK;
+
+if transaction was successfull call commit, and we enter into a new state of consistency
+if transaction failed call rollback, and we enter into the old state of consistency
+
+at any point of time, we should possess consistent/correct data
+
+
+
+account3 - 100 
+
+account1 ----> transfer 500 to account3
+account2 ----> transfer 1000 to account3
+
+
+1100 in account3
+
+1600 in account3
 PL/SQL
 
 
