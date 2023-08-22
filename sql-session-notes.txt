@@ -1,0 +1,141 @@
+Databases- SQL(Structured Querying Language)
+
+we need to learn SQL
+
+SQL
+ANSII SQL -standard
+
+MySql - DB software
+SqlServer
+Oracle 
+POstgres
+
+MySql dialect follows ANSII SQL
+Oracle dialect follows ANSII SQL
+however MySql dialect has variations when compared to Oracle dialect
+
+Database - collection of tables
+
+SQL queries are catogorized into
+--------------------------------
+1) DDL - Data Definition Language
+	- these queries deal with the structure of the table
+	- CREATE, ALTER, DROP, TRUNCATE, RENAME
+2) DML - Data Manipulation Language
+	- these queries deal with the data in the tables
+	- INSERT, UPDATE, DELETE
+3) DQL - Data Querying Language
+	- this query deals with fetching/querying the data from the table 
+	- SELECT
+4) TCL - Transaction Control Language
+	- these help with transactions
+	- COMIT, ROLLBACK
+5) DCL - Data Control Language
+	- these deal with granting and revoking priveliges to user
+	- GRANT, REVOKE
+
+Normalization
+ACID properties
+Indexes, Views
+Constraints
+functions - scalar function, aggregate functions
+
+
+the clauses used in a SELECT query
+----------------------------------
+SELECT <projection>
+	FROM <tablename>
+	WHERE <condition(s)>
+	GROUP BY <column(s)name>
+	HAVING <condition(s)>
+	ORDER BY <column(s)name>
+
+projection - filters the columns
+WHERE condn - filters the rows
+
+we can't change the sequence of the clauses
+
+Constraints
+-----------
+can be specified in 2 ways
+-------------------------
+1) at the time of creating the table(recommended)
+	1.1) at column level
+	1.2) at table level
+2) add the constraint after the table is created
+
+types of constraints
+--------------------
+1) Primary key - enforces entity intergrity, unique, no null entries, automatically indexed, generally they are auto-generated(not a rule)
+2) Foreign key - enforces referential intergrity, they refer to a column in another/same table, a table can have any number of foreign keys
+3) Not null
+4) check
+5) unique
+
+functions in mysql
+------------------
+- here we will learn in-built functions
+- categorized into 2
+	- scalar functions
+		- works on the individual values of the column and return seperate values
+		- eg: upper(), lower()
+	- aggregate functions
+		- works on all the values of the column and return a single value
+		- eg: max(), min(), avg(), sum(), count()
+
+group by and having
+-------------------
+
+
+
+
+joins
+-----
+a join is a cartesian product of the record of the 2 tables
+
+table1
+------
+A
+B
+
+table2
+------
+L
+M
+N
+
+table1 X table2 = (A,L) (A,M) (A,N) (B,L) (B,M) (B,N)
+
+
+write a query to display employee id, employee name and department name that the employee belongs to 
+
+2 styles of writing joins
+-------------------------
+1) theta style(old style)
+
+SELECT emp_id, emp_name, dept_name FROM employee_details, department_details WHERE emp_dept_id=dept_id;
+
+2) using the JOIN keyword(new style)
+
+SELECT emp_id, emp_name, dept_name FROM employee_details INNER JOIN department_details ON emp_dept_id=dept_id;
+
+TYPES of joins
+--------------
+1. Inner join
+2. Left Outter join
+3. Right Outter join
+4. Full Outter join
+5. self join
+	here the laft table and the right table are the same one
+6. cross join
+	this is a join on all the records of the left table with all the record on the right table(cartesian product)
+7. natural join
+	here the join condition is automatically figured out based on matching column names in both the left and right table
+	not recomended
+
+PL/SQL
+
+
+
+
+
