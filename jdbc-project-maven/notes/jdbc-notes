@@ -1,0 +1,36 @@
+pre-requisite
+-------------
+make sure to include the driver jar file in the dependency list of pom.xml
+
+steps for JDBC(Java DataBase Connectivity)
+------------------------------------------
+1) Load the driver (into memory)
+	Class.forName("<fully qualified name of the class>");
+2) Establish connection to the Database server
+	Connection conn = DriverManager.getConnection("<connection url has the ipadress, port, protocol>","<username>","<password>");
+3) Create a Statement and execute it
+	String query = "DELETE * FROM employee_details WHERE emp_id=501";
+	Statement stmt = conn.createStatement();
+	int rowsAffected = stmt.executeUpdate(query); ----> in this line the query goed to the DB server, gets compiled and executed 
+								and the result is sent back to the java program
+								which is received in rowsAffected					
+4) Handle the exceptions
+5) Close the connection
+	conn.close();
+
+
+
+4 things a client should know to contact the server
+---------------------------------------------------
+1) IP Address of the server 
+2) port number in which the server is running
+3) protocol
+4) credentials
+
+3 types of execute methods of Statement
+--------------------------------------
+boolean status = stmt.execute(query); -----> DDL
+int rowsAffected = stmt.executeUpdate(query); -----> DML
+ResultSet rs = stmt.executeQuery(query); -----> DQL
+
+
