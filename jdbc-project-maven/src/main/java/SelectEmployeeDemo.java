@@ -25,7 +25,7 @@ public class SelectEmployeeDemo {
 		String query = "SELECT * FROM employee_details";
 		try {
 			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery(query); // here the select query is submitted to the DB server, and the response
+			ResultSet rs = stmt.executeQuery(query); // here the select query is submitted to the DB server, and the response is received in a ResultSet
 			// traverse the rs to take out the records/data
 			System.out.println("EMP_ID      EMP_NAME     DEPT_ID");
 			while(rs.next()) {

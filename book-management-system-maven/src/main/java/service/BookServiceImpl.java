@@ -6,6 +6,7 @@ import java.util.List;
 
 import dao.BookDao;
 import dao.BookDaoCollectionImpl;
+import dao.BookDaoDatabaseImpl;
 import dao.BookDaoFileCollectionImpl;
 import exception.BooksNotFoundException;
 import model.BookPojo;
@@ -21,7 +22,8 @@ public class BookServiceImpl implements BookService {
 	
 	public BookServiceImpl()throws FileNotFoundException, IOException{
 		//bookDao = new BookDaoCollectionImpl();
-		bookDao = new BookDaoFileCollectionImpl();
+		//bookDao = new BookDaoFileCollectionImpl();
+		bookDao = new BookDaoDatabaseImpl();
 	}
 	
 	// added this constructor for unit testing the service layer
