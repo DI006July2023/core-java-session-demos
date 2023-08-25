@@ -33,4 +33,15 @@ boolean status = stmt.execute(query); -----> DDL
 int rowsAffected = stmt.executeUpdate(query); -----> DML
 ResultSet rs = stmt.executeQuery(query); -----> DQL
 
+try to interchange the DDL and DML queries...
+
+3 types of Statements
+---------------------
+1) Statement
+2) PreparedStatement
+3) CallabaleStatement
+
+
+
+
 

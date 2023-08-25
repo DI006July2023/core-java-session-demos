@@ -89,7 +89,7 @@ public class BookDaoDatabaseImpl implements BookDao {
 				return fetchedBook;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			//throw new DatabaseException();
 			e.printStackTrace();
 		}
 		

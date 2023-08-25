@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="myAccount" class="springcorexmlbased.Account"></bean>
+	
+	<bean id="room" class="springcorexmlbased.Room">
+		<constructor-arg name="length" value="550"></constructor-arg>
+		<constructor-arg name="width" value="240"></constructor-arg>
+		<constructor-arg name="height" value="150"></constructor-arg>
+	</bean>
+	
+	<bean id="table" class="springcorexmlbased.Table">
+		
+			<constructor-arg name="length" value="550"></constructor-arg>
+			<constructor-arg name="width" value="240"></constructor-arg>
+			<constructor-arg name="height" value="150"></constructor-arg>
+			<property name="color" value="brown"></property>
+	</bean>
+	
+	<bean id="television" class="springcorexmlbased.Television">
+		<constructor-arg name="model" value="Sony305"></constructor-arg>
+	</bean>
+	
+	<bean id="projector" class="springcorexmlbased.Projector">
+		<constructor-arg name="model" value="Dell202"></constructor-arg>
+		<constructor-arg name="color" value="grey"></constructor-arg>
+	</bean>
+	
+	<bean id="mathRoom" class="springcorexmlbased.ClassRoom">
+		<constructor-arg name="classProjector" ref="projector"></constructor-arg>
+		<constructor-arg name="roomNo" value="601"></constructor-arg>
+		<property name="tv" ref="television"></property>
+	</bean>
+	
+</beans>

@@ -67,3 +67,5 @@ CREATE TABLE book_details (
 INSERT INTO book_details(book_title, book_author, book_genre, book_published, book_cost, book_image_url) VALUES('Fantastic Beasts and where to find them', 'J.K.Rowling', 'Fanstasy', '2010-10-10', 125, '');
 SELECT * FROM book_details;
 INSERT INTO book_details(book_title, book_author, book_genre, book_published, book_cost, book_image_url) VALUES('Harry Potter and the Deathly Hallows', 'J.K.Rowling', 'Fanstasy', '2010-11-11', 150, '');
+
+INSERT INTO book_details(book_title, book_author, book_genre, book_published, book_cost, book_image_url) VALUES('Fantastic Beasts and where to find them', 'J.K.Rowling', 'Fanstasy', '2014-11-11', 105, '') returning book_id;

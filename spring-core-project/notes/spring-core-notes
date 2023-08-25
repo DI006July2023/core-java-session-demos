@@ -1,0 +1,20 @@
+
+
+spring-core configuration can be done in 3 ways
+-----------------------------------------------
+1) xml based configuration
+	- here we have an xml file
+	- the beans are configured in this xml file
+	- we refer to this xml file while creating the spring core container
+		ApplicationContext context = new ClassPathXmlApplicationContext("anyname.xml");
+	
+2) annotation based configuration
+	- here there is no need of the xml file
+	- all classes annotated with @Component is configured as a bean
+	- the spring core container is created 
+			AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+			context.scan("springcoreannotationbased");
+			context.refresh();
+	- @Component, @Value, @Autowired
+
+3) java based configuration
