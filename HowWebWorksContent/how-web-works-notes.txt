@@ -1,0 +1,106 @@
+Spring framework has many modules
+
+Friday
+Spring core
+-----------
+2 main concepts
+	- IOC (Inversion Of Control)
+	- DI (Dependency Injection)
+
+Tuesday
+How the web works?
+full stack application
+	- front end application
+	- back end application
+
+Wednesday
+Spring MVC
+----------
+
+
+Spring Boot *
+-----------
+	- it is a RAD(Rapid Application Developement) tool
+
+Spring Rest *
+-----------
+	- we use this in the backend application
+	- to create Rest services
+
+Spring JdbcTemplate *
+-------------------
+	- this works in DAO layer
+
+Spring JPA(Java Persistence API) 
+--------------------------------
+	- this works in the DAO layer
+	- ORM - Object Relational Mapping
+	- this would be the next level of Spring JDBCTemplate
+	- this is spring's ORM framework with default implementation of Hibernation
+
+front end - HTML, CSS(Bootstrap) , Javascript
+back end(main focus) - Spring Boot, Spring Rest, Spring JdbcTemplate
+
+
+Hotel Schema Due date - 24th Aug(Thursday) by 9 am
+School Database Due date - 29th Aug(Tuesday) by 4 pm
+
+
+How web application works
+--------------------------
+
+Web server - hosts web applications
+web application - collection of web pages
+web pages
+	- 2 types
+		- static web pages
+			- contents reamin the same on the server side
+			- html(Hyper Text Markup Language), CSS(Cascading Stylesheet), Javascript(scripting language)
+			- here we need static web servers
+		- dynamic web pages
+			- contents change on the server side, depending on the inputs of the previuos page
+			- has to be processed on the server side and the contents are decided on the server side itself
+			- so obvously the server should be capable of processing the page
+			- and for this we need a dynamic web server
+			- servlets and JSP(Java Server Pages) - we will not learn this
+
+server side programming
+	- servlets, JSP
+client side programming
+	- Javascript
+
+Javascript
+	- animations
+	- validate the inputs in the form before submitting to server
+	- manipulate the DOM(Document Object Model) Tree
+
+
+backend  application
+---------------------
+	- this is where we create/expose endpoints
+	- these endpoints provide resources to the front end application/ to other back end application
+	- interacts with the DB through DAO layer
+	- frameworks like NodeJS/ExpressJS, Spring Rest framework can be used to create the backend application
+	- we use Postman to test the endpoints of the backend application
+
+frontend application
+--------------------
+	- represents the view of the project
+	- has the capability to manipulate the DOM with Javascript
+	- contacts the backend application for resources
+	- the front end and the back end exchange data.
+	- This data could be in different formats like XML, JSON(JavaScript Object Notation)
+	- angular is a framework that can be used for developing front end application
+	- reactjs is a library that can be used for developing front end application
+
+MERN developer 
+	M - Mongo DB
+	E - Express JS
+	R - ReactJs
+	N - Node JS
+
+MEAN developer
+	M - Mongo DB
+	E - Express JS
+	A - Angular
+	N - Node JS
