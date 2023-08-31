@@ -104,3 +104,33 @@ MEAN developer
 	E - Express JS
 	A - Angular
 	N - Node JS
+
+
+when we request for a resource from the backend - 4 types of request
+
+Get request - Read
+
+Post Request - Create
+
+Put Request - Update
+
+Delete Request - Delete
+
+
+every request and response has
+	- a header
+	- body
+postman
+	- a tool/client to test endpoints
+
+Swagger
+	- similar to postman 
+	- used to test endpoints
+
+MVC - Model View Controller
+ - https://www.tutorialsteacher.com/Content/images/mvc/mvc-architecture.png
+
+Spring MVC 
+ - https://miro.medium.com/v2/resize:fit:1400/1*5vtc2zP1F3wF4qnD9hDmFg.png
+
+
