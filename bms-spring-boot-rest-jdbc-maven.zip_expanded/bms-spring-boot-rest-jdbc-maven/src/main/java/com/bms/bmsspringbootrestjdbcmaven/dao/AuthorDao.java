@@ -17,4 +17,6 @@ public interface AuthorDao {
 	public AuthorDto addAuthor(AuthorDto newAuthor);
 	public AuthorDto updateAuthor(AuthorDto updateAuhtor);
 	public void removeAuthor(int authorId);
+	
+	public List<AuthorDto> fetchAuthorsByFirstName(String firstName);
 }

@@ -45,4 +45,9 @@ public class AuthorServiceImpl implements AuthorService{
 		authorDao.removeAuthor(authorId);
 	}
 
+	@Override
+	public List<AuthorDto> fetchAuthorsByFirstName(String firstName) {
+		return authorDao.fetchAuthorsByFirstName(firstName);
+	}
+
 }

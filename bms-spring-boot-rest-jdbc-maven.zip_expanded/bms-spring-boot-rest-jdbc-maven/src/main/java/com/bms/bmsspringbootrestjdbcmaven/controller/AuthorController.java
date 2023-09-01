@@ -36,26 +36,23 @@ public class AuthorController {
 		// 2. fetch a author
 		// http://localhost:4545/authors/302
 		@GetMapping("/authors/{aid}")
-		public AuthorDto fetchAAuthor(@PathVariable("aid") int authorId) {
-			
-			return null;
+		public AuthorDto fetchAAuthor(@PathVariable("aid") int authorId) {	
+			return authorService.fetchAAuthor(authorId);
 		}
 		
 		// 3. add an author
 		// http://localhost:4545/authors
 		@PostMapping("/authors")
 		public AuthorDto addAuthor(@RequestBody AuthorDto newAuthor) {
-			
-			return null;
+			return authorService.addAuthor(newAuthor);
 		}
 		
 		
 		// 4. update a author
 		// http://localhost:4545/authors
 		@PutMapping("/authors")
-		public AuthorDto updateAuthor(@RequestBody AuthorDto updateAuhtor) {
-			
-			return null;
+		public AuthorDto updateAuthor(@RequestBody AuthorDto updateAuthor) {
+			return authorService.updateAuthor(updateAuthor);
 		}
 		
 		
@@ -65,5 +62,12 @@ public class AuthorController {
 		public void removeAuthor(@PathVariable("aid") int authorId) {
 			authorService.removeAuthor(authorId);
 		}
+
 		
+		// endpoint to fetch authors by the same first name
+		// http://localhost:4545/authors/firstname/James
+		@GetMapping("/authors/firstname/{fName}")
+		public List<AuthorDto> fetchAuthorsByFirstName(@PathVariable("fName") String firstName){
+			return authorService.fetchAuthorsByFirstName(firstName);
+		}
 }

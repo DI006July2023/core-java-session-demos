@@ -1,0 +1,79 @@
+
+Maven 
+-------
+- As the number of technologies increase we need to know the depedency list for those technologies to be added in the pom.xml
+- If i am to start working with more technologies, this involves more configuration files to be in place
+
+
+Spring Boot - RAD(Rapid Application Development) tool
+------------------------------------------------------
+	- comes with opiniated configuration, 
+	- reduces a lot of boiler plate code
+	- so if you create project using spring boot, you would have the default configurations in place
+	- also you do have a one place configuration
+	- also you add the list of maven depencies in one shot
+	- the developer can quickly get started with working on the code
+	- use the spring initializer website to create a spring boot project
+		https://start.spring.io/
+
+Version compatibility
+---------------------
+Spring Boot 3.1.3 works with Spring 6 and Spring 6 needs Java 17
+
+So the combination is Spring Boot 3.1.1 + Spring 6 + Java 17
+
+How to find out Spring Boot 3.1.3 uses Spring 6? 
+In the Maven dependencies of your Spring boot project(in your ide), you will see Spring 6 version's jar file present
+
+How do we know Spring 6 needs Java 17? 
+A github link for spring says so
+	- https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions
+The official docs for spring boot also mentions the versions
+	- https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started.first-application
+
+So how to fix the issue?
+Either upgrade java to version 17 or downgrade spring boot version that is compatible with spring 5 which in turn is compatible with 8, 11 and 17
+
+
+web servers - tomcat, weblogic, JBoss, jetty etc
+
+.jar - java archive
+.war - web archive
+.ear - enterprise archive
+
+
+evolution of the book-management-system
+----------------------------------------
+
+1) console based application
+	- had view layer, service layer, dao layer
+	- dao layer used collections as the data store
+2) console based application
+	- had view layer, service layer, dao layer
+	- dao layer used files as the data store
+3) console based application
+	- had view layer, service layer, dao layer
+	- dao layer used plain JDBC to interact with the DB. 
+4) web application(backend application) - we are here(1st sept)
+	- have controller layer, service layer, dao layer
+	- dao layer uses plain JDBC to interact with the DB. 
+5) web application(backend application) - wednesday
+	- have controller layer, service layer, dao layer
+	- dao layer uses Spring JDBCTemplate to interact with the DB.
+6) web application(frontend application) - optional
+	- here we will use html, Bootstrap(framework on CSS), Javascript
+	- we will create MPA(MultiPage Application)
+	- Javascript here will use fetch api(in turn uses AJAX) to interact with the backend application
+7) web application(backend application) - optional
+	- have controller layer, service layer, dao layer
+	- dao layer uses Spring Data JPA(ORM with Hibernate) to interact to the DB.
+
+
+
+
+
+
+
+
+
+
