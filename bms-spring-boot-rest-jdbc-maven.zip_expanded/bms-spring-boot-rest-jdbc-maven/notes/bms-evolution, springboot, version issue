@@ -11,7 +11,7 @@ Spring Boot - RAD(Rapid Application Development) tool
 	- reduces a lot of boiler plate code
 	- so if you create project using spring boot, you would have the default configurations in place
 	- also you do have a one place configuration
-	- also you add the list of maven depencies in one shot
+	- also you add the list of maven dependencies in one shot
 	- the developer can quickly get started with working on the code
 	- use the spring initializer website to create a spring boot project
 		https://start.spring.io/
@@ -57,10 +57,10 @@ evolution of the book-management-system
 4) web application(backend application) - we are here(1st sept)
 	- have controller layer, service layer, dao layer
 	- dao layer uses plain JDBC to interact with the DB. 
-5) web application(backend application) - wednesday
+5) web application(backend application) - friday (8th sep)
 	- have controller layer, service layer, dao layer
 	- dao layer uses Spring JDBCTemplate to interact with the DB.
-6) web application(frontend application) - optional
+6) web application(frontend application) - optional 
 	- here we will use html, Bootstrap(framework on CSS), Javascript
 	- we will create MPA(MultiPage Application)
 	- Javascript here will use fetch api(in turn uses AJAX) to interact with the backend application
