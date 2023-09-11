@@ -1,0 +1,41 @@
+Spring JdbcTemplate 
+-------------------
+	- responsibility of spring and developer while working with spring JdbcTemplate
+		- https://docs.spring.io/spring-framework/reference/data-access/jdbc.html
+	- some of the spring JdbcTemplate apis visited during the session
+		- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html
+		- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/RowMapper.html#mapRow(java.sql.ResultSet,int)
+		- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/dao/EmptyResultDataAccessException.html
+	- @Autowired is no longer need above the constructor if there is only one constructor
+		- https://docs.spring.io/spring-framework/reference/core/beans/annotation-config/autowired.html#:~:text=As%20of%20Spring%20Framework%204.3,one%20constructor%20to%20begin%20with.
+ResponseEntity
+--------------
+	- currently our rest methods return DTO, collection of DTO, void or any other datatype
+	- all these values returned are placed in the body of the response
+	- but if you want to send a manipulated response meaning add info to the response header or set the response code or in general if you want to manipulate the response, return ResponseEntity object 
+	- the generic type specified in the ResposeEntity would be the type you would place in the response body
+
+Exception handling in Spring JdbcTemplate
+-----------------------------------------
+	- plain Jdbc code throws SQLException which is a checked exception, so we were forced to handle it( or we can pass the ball by using throws beside the method)
+	- Spring JdbcTemplate processes the exception as DataAccessException which is an unchecked exception, so we were not forced to handle it(and also we were not forced to use throws beside the beside the method)
+	- Just like the previous way of handling the exception, we propagate the exception to a common point and handle it.
+	- since DataAccessException is an unchecked exception we dont have to say throws DataAccessException beside each method 
+	- Also DataAccessException is an exception which has to be contained within the DAO layer( All DAO API's have to be contained within the DAO layer)
+	- so we catch DataAccessException using a try catch block in the DAO layer and rethrow it as a user defined exception(ApplicationException)
+	- Now this user defined exception reaches the controller layer and and is sent to the client which is postman for us, and later it would be front end application
+	- here the exception sent back to the client has a standard format and is not the graceful way of sending the exception to the client
+	- so any exception that occurs in your backend application has to handled and the exception has to be sent to the client with the information we want to send in a graceful way.
+	- the exception in your backend application can be handled in many ways
+	- we will look at 2 ways
+		- 1st way
+			- create a method in the controller and annotate it with @ExceptionHandler
+			- this method acts like the catch block for the exception and we call it as exception handler method
+			- drawback is if you have to handle this exception in all the controllers, you have to repeat the method
+			- instead we can go for a one place handler
+		- 2nd way
+			- is called global exception handling way
+			- we create a class(any name) and annotate it with @ControllerAdvice and extend ResponseEntityExceptionHandler
+			- specify the handler methods in this class
+			- within the handler method return an ErrorDto in the response body. 
+			- this ErrorDto is loaded with all the info that you want to send to the client when the exception occurs in the backend application
