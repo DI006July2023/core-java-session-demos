@@ -1,0 +1,20 @@
+
+ORM - Object Relational Mapping
+	- concept
+JPA - Java Persistence API
+	- specification for ORM
+	- JPA also provides its own implementation ( we are not using it here)
+Hibernate, EclipseLink....
+	- framework for ORM using JPA ( we are not using it here)
+Spring Data JPA
+	- a framework that is wrapped around the hibernate framework using JPA specification
+	- spring data jpa takes most of the responsibilities and we just have to say what we need
+	- the default framework that Spring Data JPA uses is hibernate, however we can change this( we are using this here)
+	- in the dao layer, we specify the dao interface(certain things have to be taken care of)
+		 and we dont have to provide the implementation class, spring data JPA will provide the implementation class
+How it works
+------------
+- ORM fills the gap betweem relational DB and Object Oriented Programming interaction
+- we don't have to write SQL queries, the ORM framework will do that for you
+- Here an entity(class) in java is mapped to a table in the DB, also the properties of the entity(class) is mapped to the columns of the table
+- when the entity object has a live connection to a record in the DB, any changes made in the entity object will automatically reflect in the DB

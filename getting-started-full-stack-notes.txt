@@ -1,0 +1,63 @@
+AWS service to deploy complete full stack application
+----------------------------------------------------
+front end - s3 bucket service
+backend - ec2 instance
+db server - RDS service
+
+
+Steps to get started with developing a full stack application
+-------------------------------------------------------------
+Database
+--------
+1) normalize the table.
+2) find out the relation between the entities 
+	- one to one
+	- one to many / many to one
+	- many to many
+3) prepare the ERD 
+4) prepare the script file (.sql)
+5) execute the script file to get the tables created with sample data in it
+
+Backend application
+-------------------
+1) identify the user stories (the user stories generally translate to one or more methods)
+2) identify the DTOs ( mostly the DTOs correspond to the tables in the DB)
+3) create the project skeleton
+	- create the DTOs
+	- finish the dao package
+	- finish the service package
+	- finish the controller package
+	- finish the exception package
+4) we can start filling the code in all the layers starting from dao, then service, then controller
+5) by doing this the endpoints of your backend application is ready
+6) finish the unit tests for the service and the dao layer
+7) use post man to check if all the endpoints are working
+
+Frontend application
+---------------------
+1) design the wireframes ( sample of how the view(page) looks like)
+2) create web pages
+3) include the necessary links for bootstrap in the pages
+4) use javascript
+	- to manipulate the DOM
+	- use fetch api to consume the endpoints exposed by the backend application
+	- can be used for form validation on client side
+
+run the application
+-------------------
+1) make sure the DB server is up and running
+	- in windows i would check in the services
+2) start the backend application which is the spring boot application
+	- run the class which has the main method
+	- as a result the tomcat server starts up
+3) start the front end application 
+	- in vscode , right click the html page and select open with live server
+	- as a result the live server starts up
+4) from the browser request the first page of your front end application
+
+notes taken during standup meets
+--------------------------------
+ - the dto of the backend should correspond to the Javascript objects used in front end
+ - code has to pushed to remote repository to see the changes in the remote repository.
+ - a comit only comits the changes to the local repository and not the remote repository.
+ - front end never interacts with the DB
