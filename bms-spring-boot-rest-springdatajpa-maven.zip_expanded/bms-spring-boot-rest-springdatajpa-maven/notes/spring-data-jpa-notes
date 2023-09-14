@@ -14,7 +14,7 @@ Spring Data JPA
 		 and we dont have to provide the implementation class, spring data JPA will provide the implementation class
 How it works
 ------------
-- ORM fills the gap betweem relational DB and Object Oriented Programming interaction
+- ORM fills the gap between relational DB and Object Oriented Programming interaction
 - we don't have to write SQL queries, the ORM framework will do that for you
 - Here an entity(class) in java is mapped to a table in the DB, also the properties of the entity(class) is mapped to the columns of the table
 - when the entity object has a live connection to a record in the DB, any changes made in the entity object will automatically reflect in the DB

@@ -15,14 +15,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Getter
+//@Setter
+//@ToString
+//@EqualsAndHashCode
 
-@Entity
+@Entity // mandatory
 @Table(name = "author_details") // this annotation is not required if the class name and the table name are the same
 								// recommended is to still have it
 public class AuthorEntity {
@@ -37,6 +37,48 @@ public class AuthorEntity {
 	
 	@Column(name = "author_last_name")
 	private String authorLastName;
+
+	public AuthorEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public AuthorEntity(int authorId, String authorFirstName, String authorLastName) {
+		super();
+		this.authorId = authorId;
+		this.authorFirstName = authorFirstName;
+		this.authorLastName = authorLastName;
+	}
+
+	public int getAuthorId() {
+		return authorId;
+	}
+
+	public void setAuthorId(int authorId) {
+		this.authorId = authorId;
+	}
+
+	public String getAuthorFirstName() {
+		return authorFirstName;
+	}
+
+	public void setAuthorFirstName(String authorFirstName) {
+		this.authorFirstName = authorFirstName;
+	}
+
+	public String getAuthorLastName() {
+		return authorLastName;
+	}
+
+	public void setAuthorLastName(String authorLastName) {
+		this.authorLastName = authorLastName;
+	}
+
+	@Override
+	public String toString() {
+		return "AuthorEntity [authorId=" + authorId + ", authorFirstName=" + authorFirstName + ", authorLastName="
+				+ authorLastName + "]";
+	}
 	
 	
 }
