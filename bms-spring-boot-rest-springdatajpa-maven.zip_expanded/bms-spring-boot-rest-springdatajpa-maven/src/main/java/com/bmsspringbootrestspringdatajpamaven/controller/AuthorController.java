@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bmsspringbootrestspringdatajpamaven.model.AuthorDto;
 import com.bmsspringbootrestspringdatajpamaven.service.AuthorService;
 
+import jakarta.validation.Valid;
+
 
 @CrossOrigin
 @RestController
@@ -45,10 +47,9 @@ public class AuthorController {
 		// 3. add an author
 		// http://localhost:4545/authors
 		@PostMapping("/authors")
-		public AuthorDto addAuthor(@RequestBody AuthorDto newAuthor) {
+		public AuthorDto addAuthor(@RequestBody @Valid AuthorDto newAuthor) {
 			return authorService.addAuthor(newAuthor);
 		}
-		
 		
 		// 4. update a author
 		// http://localhost:4545/authors
@@ -56,8 +57,7 @@ public class AuthorController {
 		public AuthorDto updateAuthor(@RequestBody AuthorDto updateAuthor) {
 			return authorService.updateAuthor(updateAuthor);
 		}
-		
-		
+				
 		// 5. delete an author
 		// http://localhost:4545/authors/302
 		@DeleteMapping("/authors/{aid}")
@@ -65,7 +65,6 @@ public class AuthorController {
 			authorService.removeAuthor(authorId);
 		}
 
-		
 		// endpoint to fetch authors by the same first name
 		// http://localhost:4545/authors/firstname/James
 		@GetMapping("/authors/firstname/{fName}")

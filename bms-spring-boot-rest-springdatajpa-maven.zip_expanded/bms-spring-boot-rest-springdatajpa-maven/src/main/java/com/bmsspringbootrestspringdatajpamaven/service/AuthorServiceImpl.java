@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 
 import com.bmsspringbootrestspringdatajpamaven.dao.AuthorDao;
 import com.bmsspringbootrestspringdatajpamaven.dao.entity.AuthorEntity;
+import com.bmsspringbootrestspringdatajpamaven.dao.entity.BookEntity;
 import com.bmsspringbootrestspringdatajpamaven.model.AuthorDto;
+import com.bmsspringbootrestspringdatajpamaven.model.BookDto;
 
 @Service
 public class AuthorServiceImpl implements AuthorService{
@@ -32,6 +34,18 @@ public class AuthorServiceImpl implements AuthorService{
 			// now copy eachAuthorEntity into an AuthorDto object
 			AuthorDto eachAuthorDto = new AuthorDto();
 			BeanUtils.copyProperties(eachAuthorEntity, eachAuthorDto);
+			
+			// copy the collection of book entity(inside eachAuthorEntity) into a collection of book dto
+			List<BookDto> allBooksDto = new ArrayList<BookDto>();
+			for(BookEntity eachBookEntity: eachAuthorEntity.getAllBooksEntity()) {
+				BookDto bookDto = new BookDto();
+				BeanUtils.copyProperties(eachBookEntity, bookDto);
+				allBooksDto.add(bookDto);
+			}
+			
+			// set the collection into the eachAuthorDto
+			eachAuthorDto.setAllBooksDto(allBooksDto);
+			
 			allAuthorDto.add(eachAuthorDto);
 		}
 		return allAuthorDto;
@@ -49,6 +63,16 @@ public class AuthorServiceImpl implements AuthorService{
 			// copy authorEntity into authorDto
 			authorDto = new AuthorDto();
 			BeanUtils.copyProperties(authorEntityOptional.get(), authorDto);
+			
+			List<BookDto> allBooksDto = new ArrayList<BookDto>();
+			for(BookEntity eachBookEntity: authorEntityOptional.get().getAllBooksEntity()) {
+				BookDto bookDto = new BookDto();
+				BeanUtils.copyProperties(eachBookEntity, bookDto);
+				allBooksDto.add(bookDto);
+			}
+			
+			// set the collection into the eachAuthorDto
+			authorDto.setAllBooksDto(allBooksDto);
 		}
 		return authorDto;
 	}
@@ -86,8 +110,14 @@ public class AuthorServiceImpl implements AuthorService{
 
 	@Override
 	public List<AuthorDto> fetchAuthorsByFirstName(String firstName) {
-		// TODO Auto-generated method stub
-		return null;
+		List<AuthorEntity> allAuthorEntity = authorDao.findByAuthorFirstName(firstName);
+		List<AuthorDto> allAuthorDto = new ArrayList<AuthorDto>();
+		for(AuthorEntity eachAuthorEntity: allAuthorEntity) {
+			AuthorDto eachAuthorDto = new AuthorDto();
+			BeanUtils.copyProperties(eachAuthorEntity, eachAuthorDto);
+			allAuthorDto.add(eachAuthorDto);
+		}
+		return allAuthorDto;
 	}
 	
 

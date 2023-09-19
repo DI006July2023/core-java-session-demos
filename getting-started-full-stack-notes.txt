@@ -61,3 +61,13 @@ notes taken during standup meets
  - code has to pushed to remote repository to see the changes in the remote repository.
  - a comit only comits the changes to the local repository and not the remote repository.
  - front end never interacts with the DB
+ - keep the ERD simple
+ - every table should have primary key
+ - while specifing FK , specify the cascade effect as well
+ - dao should use spring JdbcTemplate, however if you want to push yourself to the next level can use spring data jpa
+ - tips : if you have a complex ERD, Spring Data JPA will help you to smoothly get the data that you 
+		need as it will create the complex joins to fetch the data, you just have to get the mappings correct
+         if the ERD is simple, then Spring JdbcTemplate should do the work for you as you may not have complex joins in SQL 
+ - the script file(.sql), ERD diagram and assumptions if any should be attached to your backend application
+ - ignore thymeleaf that is specified in engage. we are creating 3 distinct sections for the full stack application - front end, back end and DB
+ - all the packages created (controller, dao, service, entity, model etc) have to be a sub package of the package in which the class with main method resides

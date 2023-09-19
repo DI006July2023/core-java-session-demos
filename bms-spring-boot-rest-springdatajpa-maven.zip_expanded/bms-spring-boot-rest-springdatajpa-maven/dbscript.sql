@@ -19,6 +19,20 @@ CREATE TABLE book_details (
     FOREIGN KEY(book_author_id) REFERENCES author_details(author_id)
 );
 
+CREATE TABLE character_details (
+    character_id INT AUTO_INCREMENT PRIMARY KEY,
+    character_first_name VARCHAR(30),
+    character_last_name VARCHAR(30)
+);
+
+CREATE TABLE book_character_details (
+    book_char_id INT AUTO_INCREMENT PRIMARY KEY,
+    b_id INT,
+    c_id INT,
+    FOREIGN KEY(b_id) REFERENCES book_details(book_id),
+	FOREIGN KEY(c_id) REFERENCES character_details(character_id)
+);
+
 INSERT INTO author_details(author_first_name, author_last_name) VALUES ('Gerinimo', 'Stilton');
 INSERT INTO author_details(author_first_name, author_last_name) VALUES ('Patrick', 'Naughton');
 INSERT INTO author_details(author_first_name, author_last_name) VALUES ('Rowling', 'J.K');

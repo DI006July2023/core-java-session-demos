@@ -1,6 +1,7 @@
 package com.bmsspringbootrestspringdatajpamaven.dao.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,6 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -39,9 +42,19 @@ public class BookEntity {
 	@ManyToOne
 	@JoinColumn(name = "book_author_id")
 	private AuthorEntity authorEntity;
-	
+
 //	@Column(name="book_author_id")
 //	private int bookAuthorId;
+	
+	
+	@ManyToMany 
+	// since @JoinTable is used here, i would call book_details as the owner and character_details is the inverse side
+	@JoinTable(name="book_character_details",
+	           joinColumns = @JoinColumn(name="b_id"),
+	           inverseJoinColumns = @JoinColumn(name="c_id"))
+	private List<CharacterEntity> allCharacters;
+	
+
 	
 	@Column(name="book_genre")
 	private String bookGenre;

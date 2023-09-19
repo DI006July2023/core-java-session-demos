@@ -18,3 +18,11 @@ How it works
 - we don't have to write SQL queries, the ORM framework will do that for you
 - Here an entity(class) in java is mapped to a table in the DB, also the properties of the entity(class) is mapped to the columns of the table
 - when the entity object has a live connection to a record in the DB, any changes made in the entity object will automatically reflect in the DB
+
+Links referred in session
+--------------------------
+ - https://jakarta.ee/specifications/bean-validation/3.0/apidocs/jakarta/validation/constraints/package-summary
+ - https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.details
+ - https://medium.com/@nagarjunmallesh/java-persistence-api-vs-jakarta-persistence-layer-a-comparative-study-with-code-implementation-4462b1abcfd1#:~:text=Jakarta%20Persistence%20Layer%20(JPL)%20is,persistence%20to%20jakarta.
+ 
+ 
