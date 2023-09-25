@@ -47,7 +47,7 @@ public class BookEntity {
 //	private int bookAuthorId;
 	
 	
-	@ManyToMany 
+	@ManyToMany() 
 	// since @JoinTable is used here, i would call book_details as the owner and character_details is the inverse side
 	@JoinTable(name="book_character_details",
 	           joinColumns = @JoinColumn(name="b_id"),

@@ -33,7 +33,7 @@ public class BookController {
 	}
 
 	// 1. fetch all books
-	// http://localhost:6363/api/books
+	// http://localhost:7474/api/books
 	@GetMapping("/books")
 	public ResponseEntity<List<BookDto>> fetchAllBooks(){
 		// here ResponseEntity wraps up the response body(1st argument) and the status code(2nd argument)
@@ -43,7 +43,7 @@ public class BookController {
 	}
 	
 	// 2. fetch a book
-	// http://localhost:6363/api/books/102
+	// http://localhost:7474/api/books/102
 	// this 102 is called a PathVariable with the name bid and should be extracted and store in a java variable/parameter(bookId)
 	@GetMapping("/books/{bid}")
 	public ResponseEntity<BookDto> fetchABook(@PathVariable("bid") int bookId) {
@@ -51,7 +51,7 @@ public class BookController {
 	}
 	
 	// 3. add a book
-	// http://localhost:4545/books
+	// http://localhost:7474/api/books
 	// here the new book data to be inserted into the DB is sent along with the request body
 	// so what we should do is extract the new book data from the request body and store in the java method parmameter(newBook)
 	// this is done with the help of @RequestBody
@@ -62,7 +62,7 @@ public class BookController {
 	
 	
 	// 4. update a book
-	// http://localhost:4545/books
+	// http://localhost:7474/api/books
 	@PutMapping("/books")
 	public ResponseEntity<BookDto> updateBook(@RequestBody BookDto updateBook) {
 		return new ResponseEntity<BookDto>(bookService.updateBook(updateBook), HttpStatus.OK);
@@ -70,13 +70,14 @@ public class BookController {
 	
 	
 	// 5. delete a book
-	// http://localhost:6363/api/books/102
+	// http://localhost:7474/api/books/102
 	@DeleteMapping("/books/{bid}")
 	public ResponseEntity<Void> removeBook(@PathVariable("bid") int bookId) {
 		bookService.removeBook(bookId);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	
+	// http://localhost:7474/api/books/genre/Commedy
 	@GetMapping("/books/genre/{gen}")
 	public ResponseEntity<List<BookDto>> fetchBooksByGenre(@PathVariable("gen") String bookGenre){
 		return new ResponseEntity<List<BookDto>>(bookService.fetchBooksByGenre(bookGenre), HttpStatus.OK);
